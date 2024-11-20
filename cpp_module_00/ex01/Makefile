@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=		megaphone
+NAME		=		phonebook
 
-SRCS 		=		megaphone.cpp
+SRCS 		=		main.cpp
 
 OBJECTS		=		$(SRCS:.cpp=.o)
 
@@ -25,17 +25,17 @@ all: 		$(OBJECTS) $(NAME)
 					@$(CC) $(CFLAGS) -c $(INC) $< -o $(<:c=o)
 
 $(NAME):	$(OBJECTS)
-					@echo "Compiling and Creating Megaphone..."
+					@echo "Compiling and Creating PhoneBook..."
 					@$(CC) $(CFLAGS) -o $(NAME) $(OBJECTS)
 					@echo "OK !"
 
 clean:
-					@echo "Cleaning Megaphone Objects..."
+					@echo "Cleaning PhoneBook Objects..."
 					@rm -f $(OBJECTS)
 					@echo "OK !"
 
 fclean:			clean
-					@echo "Cleaning Megaphone..."
+					@echo "Cleaning PhoneBook..."
 					@rm -f $(NAME)
 					@echo "OK !"
 
