@@ -1,3 +1,7 @@
 *
+*/*
+
 !*.cpp
+!*.hpp
 !Makefile
+!ex*
