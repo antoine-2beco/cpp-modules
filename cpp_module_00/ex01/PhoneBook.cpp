@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 16:52:26 by ade-beco          #+#    #+#             */
-/*   Updated: 2024/11/21 10:46:26 by ade-beco         ###   ########.fr       */
+/*   Created: 2024/11/21 09:53:35 by ade-beco          #+#    #+#             */
+/*   Updated: 2024/11/21 09:55:12 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "PhoneBook.hpp"
+#include <iostream>
 
-# include "Contact.hpp"
-
-class PhoneBook {
-
-	private :
-		Contact	contacts[8];
-		int		used;
-
-	public :
-		PhoneBook();
-
-} ;
-
-#endif
+PhoneBook::PhoneBook(){
+	std::cout << "PhoneBook Constructed !";
+	this->used = 0;
+}
