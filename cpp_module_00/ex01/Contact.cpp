@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 16:52:35 by ade-beco          #+#    #+#             */
-/*   Updated: 2024/11/21 10:49:44 by ade-beco         ###   ########.fr       */
+/*   Created: 2024/11/21 10:10:54 by ade-beco          #+#    #+#             */
+/*   Updated: 2024/11/21 10:49:29 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#include "Contact.hpp"
+#include <iostream>
+#include <string>
 
-# include <string>
+std::string Contact::fields_name[5] = {
+	"First Name",
+	"Last Name",
+	"Nickname",
+	"Phone Number",
+	"Darkest Secret"
+};
 
-class Contact {
-
-	public : 
-		Contact();
-
-	private :
-		int					index;
-		static std::string	fields_name[5];
-		enum				Fields{
-			FirstName,
-			LastName,
-			Nickname,
-			PhoneNumber,
-			DarkestSecret,
-		};
-		
-} ;
-
-#endif
+Contact::Contact(){
+	std::cout << "Contact Constructed !";
+}
