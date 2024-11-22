@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:10:54 by ade-beco          #+#    #+#             */
-/*   Updated: 2024/11/21 10:49:29 by ade-beco         ###   ########.fr       */
+/*   Updated: 2024/11/22 12:06:12 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ std::string Contact::fields_name[5] = {
 };
 
 Contact::Contact(){
-	std::cout << "Contact Constructed !";
+	std::cout << "Contact Constructed !" << std::endl;
 }

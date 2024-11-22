@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:52:26 by ade-beco          #+#    #+#             */
-/*   Updated: 2024/11/21 10:46:26 by ade-beco         ###   ########.fr       */
+/*   Updated: 2024/11/22 12:04:45 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class PhoneBook {
 
 	public :
 		PhoneBook();
+		void	show_menu(void);
 
 } ;
 

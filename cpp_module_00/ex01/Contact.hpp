@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:52:35 by ade-beco          #+#    #+#             */
-/*   Updated: 2024/11/21 10:49:44 by ade-beco         ###   ########.fr       */
+/*   Updated: 2024/11/22 11:57:27 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 # include <string>
 
 class Contact {
-
-	public : 
-		Contact();
 
 	private :
 		int					index;
@@ -30,6 +27,9 @@ class Contact {
 			PhoneNumber,
 			DarkestSecret,
 		};
+
+	public : 
+		Contact();
 		
 } ;
 
