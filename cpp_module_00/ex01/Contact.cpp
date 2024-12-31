@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:10:54 by ade-beco          #+#    #+#             */
-/*   Updated: 2024/11/26 12:13:07 by ade-beco         ###   ########.fr       */
+/*   Updated: 2024/12/31 16:52:36 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ std::string Contact::fields_name[5] = {
 	"Darkest Secret"
 };
 
-Contact::Contact(){
-	std::cout << "Contact Constructed !" << std::endl;
+Contact::Contact()
+{
 }
 
 void	Contact::set_informations(std::string inputs[5], int index)
@@ -32,4 +32,27 @@ void	Contact::set_informations(std::string inputs[5], int index)
 	for (int i = 0; i < 5; i++)
 		this->informations[i] = inputs[i];
 	std::cout << "Contact added !" << std::endl;
+}
+
+void	Contact::display_contact_header()
+{
+	std::cout << "|" << std::setw(10) << this->index;
+	for (int i = 0; i < 3; i++)
+	{
+		std::cout << "|";
+		if (this->informations[i].length() > 10)
+			std::cout << this->informations[i].substr(0, 9) << ".";
+		else
+			std::cout << std::setw(10) << this->informations[i];
+	}
+	std::cout << "|" << std::endl;
+}
+
+void	Contact::display_contact()
+{
+	for (int i = 0; i < 5; i++)
+	{
+		std::cout << this->fields_name[i] << " : ";
+		std::cout << this->informations[i] << std::endl;
+	}
 }

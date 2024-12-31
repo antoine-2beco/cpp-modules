@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:52:26 by ade-beco          #+#    #+#             */
-/*   Updated: 2024/11/26 12:09:32 by ade-beco         ###   ########.fr       */
+/*   Updated: 2024/12/31 16:21:53 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "Contact.hpp"
 # include <iostream>
+# include <iomanip>
 # include <string>
 
 class PhoneBook
@@ -30,6 +31,9 @@ class PhoneBook
 		
 		void	add_contact(void);
 		void	get_informations(int index);
+		
+		void	display_search_header();
+		void	search_contact();
 
 
 
