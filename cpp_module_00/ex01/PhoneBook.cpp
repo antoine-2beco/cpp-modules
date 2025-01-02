@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 09:53:35 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/01/02 12:11:14 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/01/02 16:57:03 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int	PhoneBook::get_informations(int index)
 		if (inputs[i].empty())
 		{
 			std::cout << "No entry ! Contact isn't added !" << std::endl;
-			this->used--;
 			return (1);
 		}
 	}
@@ -78,9 +77,10 @@ void	PhoneBook::search_contact()
 	{
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		std::cout << "Invalid  index !\n~";
+		std::cout << "Invalid  index !\n";
+		return ;
 	}
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	if (index > 0)
-		this->contacts[index].display_contact();
+		this->contacts[index - 1].display_contact();
 }
