@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:52:26 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/01/02 11:54:22 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/01/02 17:04:19 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class PhoneBook
 		void	show_menu(void);
 		
 		void	add_contact(void);
-		int	get_informations(int index);
+		int		get_informations(int index);
 		
 		void	display_search_header();
 		void	search_contact();
