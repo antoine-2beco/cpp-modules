@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:10:54 by ade-beco          #+#    #+#             */
-/*   Updated: 2024/12/31 16:52:36 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/01/02 12:04:29 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	Contact::set_informations(std::string inputs[5], int index)
 
 void	Contact::display_contact_header()
 {
-	std::cout << "|" << std::setw(10) << this->index;
+	std::cout << "|" << std::setw(10) << this->index + 1;
 	for (int i = 0; i < 3; i++)
 	{
 		std::cout << "|";

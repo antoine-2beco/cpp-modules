@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 09:53:35 by ade-beco          #+#    #+#             */
-/*   Updated: 2024/12/31 16:54:09 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/01/02 12:11:14 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,12 @@ void	PhoneBook::add_contact()
 	int			index;
 
 	if (this->used == 8)
-		index = 8;
-	else
-		index = this->used++;
-	this->get_informations(index);
+		this->get_informations(7);
+	else if (!this->get_informations(this->used))
+		this->used++;
 }
 
-void	PhoneBook::get_informations(int index)
+int	PhoneBook::get_informations(int index)
 {
 	std::string	inputs[5];
 
@@ -47,10 +46,11 @@ void	PhoneBook::get_informations(int index)
 		{
 			std::cout << "No entry ! Contact isn't added !" << std::endl;
 			this->used--;
-			return ;
+			return (1);
 		}
 	}
-	PhoneBook::contacts[index].set_informations(inputs, index + 1);
+	PhoneBook::contacts[index].set_informations(inputs, index);
+	return (0);
 }
 
 void	PhoneBook::display_search_header()
@@ -73,16 +73,14 @@ void	PhoneBook::search_contact()
 		return ;
 	}
 	this->display_search_header();
-	std::cout << "Enter the index of the contact you search : ";
-	std::cin >> index;
-	
-	if (index < 0 || index > this->used)
+	std::cout << "Enter the index of the contact you search :\n~";
+	if (!(std::cin >> index) || (index <= 0 || index > this->used))
 	{
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		std::cout << "Invalid  index !" << std::endl;
+		std::cout << "Invalid  index !\n~";
 	}
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	if (index > 0)
-		this->contacts[index - 1].display_contact();
+		this->contacts[index].display_contact();
 }
