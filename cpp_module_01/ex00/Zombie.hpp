@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 16:52:35 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/01/03 15:47:50 by ade-beco         ###   ########.fr       */
+/*   Created: 2025/01/03 15:46:53 by ade-beco          #+#    #+#             */
+/*   Updated: 2025/01/03 16:20:31 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
 # include <iostream>
-# include <iomanip>
-# include <string>
 
-class Contact
+class Zombie
 {
 	private :
-		int					index;
-		std::string			informations[5];
+		std::string	name;
 
-	public : 
-		Contact();
-		static std::string	fields_name[5];
+	public :
+		Zombie( std::string name );
+		~Zombie();
 		
-		void	set_informations(std::string inputs[5], int index);
-		void	display_contact_header();
-		void	display_contact();
-} ;
+		void		announce( void );
+};
+
+Zombie* 	newZombie( std::string name );
+void 		randomChump( std::string name );
 
 #endif
