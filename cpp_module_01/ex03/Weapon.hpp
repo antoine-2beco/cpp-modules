@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:14:18 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/01/09 14:36:18 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:57:44 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ class	Weapon
 		std::string	type;
 		
 	public :
-		Weapon();
+		Weapon( std::string type );
 		~Weapon();
 
-		getType( void );
-		setType( std::string newType );
+		const std::string&	getType( void );
+		void				setType( std::string newType );
 
 };
 

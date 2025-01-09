@@ -6,13 +6,13 @@
 #    By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/09 13:43:54 by ade-beco          #+#    #+#              #
-#    Updated: 2025/01/09 14:30:44 by ade-beco         ###   ########.fr        #
+#    Updated: 2025/01/09 15:04:18 by ade-beco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=		ex03_exec
 
-SRCS 		=		main.cpp Weapon.hpp, Weapon.cpp, HumanA.hpp, HumanA.cpp, HumanB.hpp, HumanB.cpp
+SRCS 		=		main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJECTS		=		$(SRCS:.cpp=.o)
 
