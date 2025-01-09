@@ -6,11 +6,11 @@
 #    By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/09 13:43:54 by ade-beco          #+#    #+#              #
-#    Updated: 2025/01/09 13:26:24 by ade-beco         ###   ########.fr        #
+#    Updated: 2025/01/09 13:57:32 by ade-beco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=		ex00
+NAME		=		ex00_exec
 
 SRCS 		=		main.cpp newZombie.cpp Zombie.cpp randomChump.cpp
 
