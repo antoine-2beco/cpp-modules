@@ -6,31 +6,31 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:30:42 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/01/13 16:19:48 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:23:58 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SedV2.hpp"
 
-SedV::SedV(  std::string filename )
+SedV2::SedV2(  std::string filename )
 {
-	this->inFile = filename
+	this->inFile = filename;
 	this->outFile = this->inFile + ".replace";
 }
 
-SedV::~SedV()
+SedV2::~SedV2()
 {
 }
 
-void	SedV::replace( std::string s1, std::string s2 )
+int	SedV2::replace( std::string s1, std::string s2 )
 {
-	std::ifstream	ifs = this->inFile;
+	std::ifstream	ifs(this->inFile);
 	if (ifs.is_open())
 	{
 		std::string	content;
 		if (std::getline(ifs, content, '\0'))
 		{
-			std::ofstream	ofs = outFile;
+			std::ofstream	ofs(this->outFile);
 			size_t			pos = content.find(s1);
 			while ( pos != std::string::npos )
 			{
@@ -39,7 +39,7 @@ void	SedV::replace( std::string s1, std::string s2 )
 				pos = content.find(s1);
 			}
 			ofs << content;
-			ofs.close;
+			ofs.close();
 		}
 		else
 		{
