@@ -6,11 +6,11 @@
 #    By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/16 13:43:54 by ade-beco          #+#    #+#              #
-#    Updated: 2025/01/29 18:57:54 by ade-beco         ###   ########.fr        #
+#    Updated: 2025/01/31 17:13:21 by ade-beco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=		ex00
+NAME		=		ex00_exec
 
 SRCS 		=		main.cpp Fixed.cpp
 
