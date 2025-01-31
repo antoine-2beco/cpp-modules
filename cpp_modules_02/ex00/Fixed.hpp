@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 18:59:28 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/01/31 16:15:16 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/01/31 16:55:15 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Fixed
 
 	public :
 		Fixed (/* args */);
-		Fixed (const Fixed &other);
-		Fixed& operator=( const Fixed &other);
+		Fixed ( const Fixed &other );
+		Fixed& operator=( const Fixed &other );
 		~Fixed();
 
 		int		getRawBits( void ) const;
