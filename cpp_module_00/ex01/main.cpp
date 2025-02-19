@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:33:30 by ade-beco          #+#    #+#             */
-/*   Updated: 2024/12/31 16:41:45 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/02/19 13:03:38 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int main(void)
 	while (true)
 	{
 		std::cout << "/> ";
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+			input = "EXIT";
 		if (input == "ADD")
 			phonebook.add_contact();
 		else if (input == "SEARCH")
