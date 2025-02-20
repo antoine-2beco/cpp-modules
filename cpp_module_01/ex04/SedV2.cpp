@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:30:42 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/01/13 16:23:58 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/02/20 12:25:22 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ int	SedV2::replace( std::string s1, std::string s2 )
 		std::cerr << "Opening file failed !" << std::endl;
 		return (EXIT_FAILURE);
 	}
-	
+	return (0);	
 }
  
