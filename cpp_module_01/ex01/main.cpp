@@ -6,13 +6,13 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:55:13 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/01/09 12:10:20 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/02/20 12:22:44 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Zombie.hpp"
+#include "Zombie.hpp"
 
-# define N 15
+#define N 15
 
 int	main( void )
 {
