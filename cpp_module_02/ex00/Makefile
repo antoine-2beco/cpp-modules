@@ -6,7 +6,7 @@
 #    By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/16 13:43:54 by ade-beco          #+#    #+#              #
-#    Updated: 2025/01/31 17:13:21 by ade-beco         ###   ########.fr        #
+#    Updated: 2025/02/24 11:53:00 by ade-beco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ CFLAGS		=		-Wall -Wextra -Werror -std=c++98
 all: 		$(OBJECTS) $(NAME)
 
 %.o:		%.c
-					@$(CC) $(CFLAGS) -c $(INC) $< -o $(<:c=o)
+					@$(CC) $(CFLAGS) $< -o $(<:c=o)
 
 $(NAME):	$(OBJECTS)
 					@echo "Compiling and Creating $(NAME)..."
