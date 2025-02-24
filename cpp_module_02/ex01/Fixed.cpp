@@ -6,12 +6,13 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 16:19:56 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/24 11:30:22 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:30:06 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
+#include <cmath>
 
 Fixed::Fixed() : _fixedPointValue(0)
 {
@@ -23,7 +24,7 @@ Fixed::Fixed( const int n ) : _fixedPointValue(n << _fractionalBits)
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed( const float n ) : _fixedPointValue(std::roundf(n * (1 << _fractionalBits)))
+Fixed::Fixed( const float n ) : _fixedPointValue(roundf(n * (1 << _fractionalBits)))
 {
 	std::cout << "Float constructor called" << std::endl;
 }
