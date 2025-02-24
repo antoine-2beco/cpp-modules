@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 15:35:06 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/24 15:35:08 by ade-beco         ###   ########.fr       */
+/*   Created: 2025/02/19 16:27:00 by ade-beco          #+#    #+#             */
+/*   Updated: 2025/02/24 15:42:26 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(100), _energyPoints(50), _attackDamage(20) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
@@ -44,7 +44,7 @@ void	ClapTrap::attack( const std::string& target ) {
 		std::cout << "ClapTrap " << _name << " has no more energy points." << std::endl;
 	else {
 		_energyPoints--;
-		std::cout << "ClapTrap " << _name << " attacks ClapTrap "<< target << "." << std::endl;
+		std::cout << "ClapTrap " << _name << " attacks ClapTrap " << target << ", causing " << _attackDamage << " points of damage." << std::endl;
 	}
 }
 
@@ -53,7 +53,7 @@ void	ClapTrap::takeDamage( unsigned int amount ) {
 		std::cout << "ClapTrap " << _name << " is already dead." << std::endl;
 	else {
 		_hitPoints -= amount;
-		std::cout << "ClapTrap " << _name << " has been attacked, causing "<< amount << " points of damage." << std::endl;
+		std::cout << "ClapTrap " << _name << " has been attacked." << std::endl;
 	}
 }
 

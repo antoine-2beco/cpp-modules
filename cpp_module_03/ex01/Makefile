@@ -6,13 +6,13 @@
 #    By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/19 16:26:11 by ade-beco          #+#    #+#              #
-#    Updated: 2025/02/24 15:33:52 by ade-beco         ###   ########.fr        #
+#    Updated: 2025/02/24 15:55:41 by ade-beco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=		ex01_exec
 
-SRCS 		=		main.cpp ClapTrap.cpp
+SRCS 		=		main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJECTS		=		$(SRCS:.cpp=.o)
 
