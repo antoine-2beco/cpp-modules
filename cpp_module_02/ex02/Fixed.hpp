@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 17:37:24 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/03 17:39:37 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/02/24 11:39:46 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,6 @@
 
 class Fixed
 {
-	private :
-		int					fixedpoint_Value;
-		static const int	fractional_Bits = 8;
-
 	public :
 		Fixed (/* args */);
 		Fixed ( const int n );
@@ -57,6 +53,9 @@ class Fixed
     	static const Fixed&	min( const Fixed &a, const Fixed &b );
     	static Fixed&		max( Fixed &a, Fixed &b );
     	static const Fixed&	max( const Fixed &a, const Fixed &b );
+
+	int					_fixedPointValue;
+	static const int	_fractionalBits = 8;
 };
 
 std::ostream	&operator<<( std::ostream &os, Fixed const &n );
