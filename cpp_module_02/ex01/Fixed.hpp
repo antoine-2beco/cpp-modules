@@ -6,21 +6,16 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 16:20:01 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/03 10:16:37 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/02/24 11:35:57 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
-
-#include <iostream>
+# include <iostream>
 
 class Fixed
 {
-	private :
-		int					fixedpoint_Value;
-		static const int	fractional_Bits = 8;
-
 	public :
 		Fixed (/* args */);
 		Fixed ( const int n );
@@ -33,6 +28,9 @@ class Fixed
 		void	setRawBits( int const raw );
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
+
+	int					_fixedPointValue;
+	static const int	_fractionalBits = 8;
 
 };
 
