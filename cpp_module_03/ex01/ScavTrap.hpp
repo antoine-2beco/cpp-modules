@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 15:43:14 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/24 16:19:10 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/02/25 15:04:50 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class ScavTrap: public ClapTrap
 	
 	public :
 		ScavTrap( std::string name );
+		ScavTrap( const ScavTrap& other );
+		ScavTrap& operator=( const ScavTrap& other );
 		~ScavTrap();
 		
 		void	attack( std::string const& target );
