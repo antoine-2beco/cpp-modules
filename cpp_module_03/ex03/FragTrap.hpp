@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 16:52:21 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/25 15:06:02 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/02/25 16:45:32 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@
 # include <iostream>
 
 class FragTrap : virtual public ClapTrap {
-
-	FragTrap();
-
 	public :
+		FragTrap();
 		FragTrap( std::string name );
 		FragTrap( const FragTrap& other );
 		FragTrap& operator=( const FragTrap& other);

@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 15:43:14 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/25 15:04:50 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/02/25 16:39:32 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap
-{
-	ScavTrap();
-	
+class ScavTrap: public ClapTrap {
 	public :
+		ScavTrap();
 		ScavTrap( std::string name );
 		ScavTrap( const ScavTrap& other );
 		ScavTrap& operator=( const ScavTrap& other );
