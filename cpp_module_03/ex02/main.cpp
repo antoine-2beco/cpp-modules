@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 16:51:09 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/24 17:03:53 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:16:16 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int main ( void ) {
 	std::cout << std::endl;
 
 	ScavTrap c("Emile");
+	ScavTrap f(c);
 	c.attack("Alphonse");
 	c.guardGate();
 
@@ -45,8 +46,15 @@ int main ( void ) {
 	std::cout << std::endl;
 
 	FragTrap d("Elisa");
+	FragTrap g(d);
+	std::cout << std::endl;
+	FragTrap h;
 	d.attack("Alphonse");
+	g.attack("Alphonse");
+	h.attack("Alphonse");
 	d.highFivesGuys();
+	g.highFivesGuys();
+	h.highFivesGuys();
 	
 	std::cout << std::endl;
 	std::cout << std::endl;

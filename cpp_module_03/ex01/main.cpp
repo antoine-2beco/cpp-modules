@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 15:35:01 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/24 16:19:55 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:14:34 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ int main ( void ) {
 	std::cout << std::endl;
 
 	ScavTrap c("Emile");
+	ScavTrap d(c);
+	ScavTrap e;
 	c.attack("Alphonse");
+	d.attack("Alphonse");
 	c.guardGate();
+	d.guardGate();
 }

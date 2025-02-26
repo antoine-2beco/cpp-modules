@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 17:14:25 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/25 17:25:29 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:33:53 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 #include <iostream>
 
-DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap() {
+DiamondTrap::DiamondTrap() : ClapTrap("Default name_clap_name"), ScavTrap(), FragTrap() {
+	_name = "Default name";
 	_hitPoints = FragTrap::_hitPoints;
 	_energyPoints = ScavTrap::_energyPoints;
 	_attackDamage = FragTrap::_attackDamage;

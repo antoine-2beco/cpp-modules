@@ -6,11 +6,15 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 16:27:00 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/24 15:41:15 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:32:16 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap() : _name("Default name"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+	std::cout << "Default constructor called" << std::endl;
+}
 
 ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
 	std::cout << "Default constructor called" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 16:27:02 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/24 16:21:16 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:32:27 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class ClapTrap {
 	int			_attackDamage;
 	
 	public :
+		ClapTrap();
 		ClapTrap( std::string name );
 		ClapTrap( const ClapTrap& other );
 		ClapTrap& operator= ( const ClapTrap& other );
