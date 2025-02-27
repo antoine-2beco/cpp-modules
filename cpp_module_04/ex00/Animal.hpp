@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 15:00:49 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/25 15:14:02 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/02/27 12:02:35 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 class Animal {
     protected :
-        std::string type;
+        std::string _type;
 
     public :
         Animal();
-        Animal( std::string type );
-        Animal( const Animal& other );
-        Animal& operator=( const Animal& other );
+        Animal( std::string& type );
+        Animal( const Animal& cpy );
+        Animal& operator=( const Animal& cpy );
         ~Animal();
 }
 
