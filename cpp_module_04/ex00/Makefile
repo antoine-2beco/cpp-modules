@@ -6,13 +6,13 @@
 #    By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/19 16:26:11 by ade-beco          #+#    #+#              #
-#    Updated: 2025/02/25 15:00:41 by ade-beco         ###   ########.fr        #
+#    Updated: 2025/02/27 12:17:04 by ade-beco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=		ex00_exec
 
-SRCS 		=		main.cpp Animal.cpp
+SRCS 		=		main.cpp Animal.cpp Cat.cpp Dog.cpp
 
 OBJECTS		=		$(SRCS:.cpp=.o)
 
