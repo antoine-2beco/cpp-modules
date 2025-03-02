@@ -6,13 +6,16 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:06:33 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/02 17:49:10 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/02 18:05:49 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 #include <iostream>
 
@@ -26,4 +29,16 @@ int main() {
     j->makeSound();
     i->makeSound();
     meta->makeSound();
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    const WrongAnimal* wrongMeta = new WrongAnimal();
+    const WrongAnimal* WrongI = new WrongCat();
+
+    std::cout << WrongI->getType() << " " << std::endl;
+    WrongI->makeSound();
+    wrongMeta->makeSound();
+
 }
