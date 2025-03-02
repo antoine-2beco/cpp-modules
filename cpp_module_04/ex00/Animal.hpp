@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 15:00:49 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/27 12:52:43 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/02 17:51:05 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Animal {
 
 		const std::string	getType() const;
 
-        virtual void	makeSound();
+        const virtual void	makeSound() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:11:31 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/27 12:48:37 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/02 17:50:56 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cat : public Animal {
         Cat& operator=( const Cat& cpy );
         ~Cat();
 
-        void makeSound();
+        const void makeSound() const;
 
 		const std::string	getType() const;
 };

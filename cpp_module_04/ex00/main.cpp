@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:06:33 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/27 12:54:42 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/02 17:49:10 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,9 @@
 #include <iostream>
 
 int main() {
-    Animal* meta = new Animal();
-    Animal* j = new Dog();
-    Animal* i = new Cat();
-    // Animal* meta_cpy = new Animal(meta);
-    // Animal* j_cpy = new Dog(j);
-    // Animal* i_cpy = new Cat(i);
+    const Animal* meta = new Animal();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
 
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;

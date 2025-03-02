@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 15:00:47 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/02/27 12:48:50 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/02 17:52:01 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ const std::string	Dog::getType() const {
     return _type;
 }
 
-void    Dog::makeSound() {
+const void    Dog::makeSound() const {
     std::cout << "Ouaf Ouaf !" << std::endl;
 }
