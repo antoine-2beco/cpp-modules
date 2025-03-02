@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:06:33 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/02 18:05:49 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/02 18:10:00 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,11 @@ int main() {
     std::cout << WrongI->getType() << " " << std::endl;
     WrongI->makeSound();
     wrongMeta->makeSound();
+
+    delete(meta);
+    delete(j);
+    delete(i);
+    delete(WrongI);
+    delete(wrongMeta);
 
 }
