@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:06:33 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/03 11:26:42 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/03 11:56:42 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #define TAB_SIZE 4
 
 int main() {
-    const Animal* meta = new Animal();
+    // const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 
@@ -30,9 +30,9 @@ int main() {
     std::cout << i->getType() << " " << std::endl;
     j->makeSound();
     i->makeSound();
-    meta->makeSound();
+    // meta->makeSound();
 
-    delete(meta);
+    // delete(meta);
     delete(j);
     delete(i);
 
