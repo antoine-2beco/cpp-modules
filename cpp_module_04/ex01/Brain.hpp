@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/27 12:11:31 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/03 10:59:20 by ade-beco         ###   ########.fr       */
+/*   Created: 2025/03/03 10:46:06 by ade-beco          #+#    #+#             */
+/*   Updated: 2025/03/03 10:47:57 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Cat_HPP
-# define Cat_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include "Animal.hpp"
+#include <iostream>
 
-# include <iostream>
+class Brain {
+	std:string	_ideas[100];
 
-class Cat : public Animal {
-
-    Brain   *_brain;
-
-    public :
-        Cat();
-        Cat( const Cat& cpy );
-        Cat& operator=( const Cat& cpy );
-        ~Cat();
-
-        const void makeSound() const;
-
-		const std::string	getType() const;
-};
+	public :
+		Brain();
+		Brain( const Brain& cpy );
+		Brain& operator=( const Brain& cpy );
+		~Brain();
+}
 
 #endif

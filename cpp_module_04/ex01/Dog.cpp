@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 15:00:47 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/02 17:52:01 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/03 10:58:05 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 
 Dog::Dog() : Animal("Dog") {
     std::cout << "Default Dog constructor called." << std::endl;
+    try {
+    _brain = new Brain();
+    }
+    catch ( const std::bad_alloc& e ) {
+        std::cout << "Error : Memory Allocation failed : " << e.what() << std::endl;
+    }
 }
 
 Dog::Dog( const Dog& cpy ) : Animal(cpy) {
@@ -26,12 +32,20 @@ Dog::Dog( const Dog& cpy ) : Animal(cpy) {
 
 Dog& Dog::operator=( const Dog& cpy) {
     std::cout << "Dog copy assignement called." << std::endl;
-    if (this != &cpy)
+    if (this != &cpy) {
         _type = cpy._type;
+        try {
+            _brain = new Brain(cpy._brain);
+        }
+        catch ( const std::bad_alloc& e ) {
+            std::cout << "Error : Memory Allocation failed : " << e.what() << std::endl;
+        }
+    }
     return *this;
 }
 
 Dog::~Dog() {
+    delete (_brain);
     std::cout << "Dog destructor called." << std::endl;
 }
 
