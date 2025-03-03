@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:11:31 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/03 10:59:22 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/03 11:19:07 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define DOG_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 # include <iostream>
 

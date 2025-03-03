@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 10:46:06 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/03 10:47:57 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/03 11:21:20 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 #include <iostream>
 
 class Brain {
-	std:string	_ideas[100];
+	std::string	_ideas[100];
 
 	public :
 		Brain();
 		Brain( const Brain& cpy );
 		Brain& operator=( const Brain& cpy );
 		~Brain();
-}
+};
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:06:33 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/03 10:41:05 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/03 11:26:42 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include "WrongCat.hpp"
 
 #include <iostream>
+
+#define TAB_SIZE 4
 
 int main() {
     const Animal* meta = new Animal();
@@ -47,4 +49,22 @@ int main() {
     delete(WrongI);
     delete(wrongMeta);
 
+    std::cout << std::endl;
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+	const Animal*	tab[TAB_SIZE];
+
+    for (int i = 0; i < TAB_SIZE; i++) {
+        if (i % 2 == 0)
+			tab[i] = new Dog();
+		else
+			tab[i] = new Cat();
+    }
+
+	std::cout << std::endl;
+
+	for (int i = 0; i < TAB_SIZE; i++) {
+		delete tab[i];
+	}
 }

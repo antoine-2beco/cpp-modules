@@ -6,12 +6,13 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 15:00:47 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/03 10:58:05 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/03 11:24:43 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
+#include "Brain.hpp"
 
 #include <iostream>
 
@@ -35,7 +36,7 @@ Dog& Dog::operator=( const Dog& cpy) {
     if (this != &cpy) {
         _type = cpy._type;
         try {
-            _brain = new Brain(cpy._brain);
+            _brain = new Brain( *cpy._brain );
         }
         catch ( const std::bad_alloc& e ) {
             std::cout << "Error : Memory Allocation failed : " << e.what() << std::endl;
