@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 11:36:57 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/06 13:56:51 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/06 14:01:09 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Bureaucrat::Bureaucrat( const std::string name, int grade ) : _name(name), _grad
 		throw Bureaucrat::GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat& cpy ) {
+Bureaucrat::Bureaucrat( const Bureaucrat& cpy ) : _name(cpy.getName()) {
 	*this = cpy;
 }
 
