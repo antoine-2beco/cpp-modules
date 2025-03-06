@@ -6,11 +6,12 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:04:13 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/06 12:47:47 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/06 13:54:59 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 #include <iostream>
 
