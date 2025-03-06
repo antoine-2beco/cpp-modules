@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 11:36:57 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/06 12:31:11 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/06 13:56:51 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <iostream>
 
-Bureaucrat::Bureaucrat( std::string name, int grade ) : _name(name), _grade(grade) {
+Bureaucrat::Bureaucrat( const std::string name, int grade ) : _name(name), _grade(grade) {
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	if (grade > 150)
@@ -27,7 +27,6 @@ Bureaucrat::Bureaucrat( const Bureaucrat& cpy ) {
 
 Bureaucrat& Bureaucrat::operator=( const Bureaucrat& cpy ) {
 	if (this != &cpy) {
-		_name = cpy.getName();
 		_grade = cpy.getGrade();
 	}
 	return *this;
