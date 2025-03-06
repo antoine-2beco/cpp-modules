@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 11:31:46 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/06 12:26:44 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/06 12:57:19 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class	Bureaucrat
 {
-	std::string	_name;
+	const std::string	_name;
 	int			_grade;
 
 	Bureaucrat();
