@@ -6,11 +6,11 @@
 #    By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/05 16:04:39 by ade-beco          #+#    #+#              #
-#    Updated: 2025/03/06 13:49:25 by ade-beco         ###   ########.fr        #
+#    Updated: 2025/03/07 13:59:59 by ade-beco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=		ex00_exec
+NAME		=		ex01_exec
 
 SRCS 		=		main.cpp Bureaucrat.cpp Form.cpp
 

@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:04:13 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/06 13:54:59 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:05:00 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,20 @@ int main() {
 	std::cout << b;
 	std::cout << c;
 	std::cout << std::endl;
+
+
+	Form contract("contract", 75);
+	//Form contract2("contract2", 0);
+	Form contract3("contract3", 75, 75);
+
+	std::cout << contract;
+	std::cout << contract3;
+	std::cout << std::endl;
+
+	c.signForm(contract);
+	b.signForm(contract);
+	std::cout << std::endl;
+
+	std::cout << contract;
+	std::cout << contract3;
 }

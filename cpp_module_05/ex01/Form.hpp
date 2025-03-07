@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:56:28 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/06 13:55:15 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:01:59 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ class Form {
 
 		class GradeTooHighException : public std::exception {
 			public :
-				const char* what() const throw() { return "Grade too high"; }
+				const char* what() const throw() { return "grade too high"; }
 		};
 		class GradeTooLowException : public std::exception {
 			public :
-				const char* what() const throw() { return "Grade too low"; }
+				const char* what() const throw() { return "grade too low"; }
 		};
 };
 

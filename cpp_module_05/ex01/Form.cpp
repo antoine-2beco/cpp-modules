@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 13:04:03 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/06 14:01:40 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:05:25 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ void				Form::beSigned( const Bureaucrat &bureaucrat ) {
 
 
 std::ostream&	operator<<( std::ostream& o, const Form& src ) {
-	std::cout << src.getName() << ", form signed : " << src.getSigned() \
-		<< ", form grade to sign : " << src.getGradeToSign() \
-		<< ", form grade to execute" << src.getGradeToExecute() << std::endl;
+	std::cout << src.getName() << " : signed = " << src.getSigned() \
+		<< ", grade to sign = " << src.getGradeToSign() \
+		<< ", grade to execute = " << src.getGradeToExecute() << std::endl;
 	return o;
 }
