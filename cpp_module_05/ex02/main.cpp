@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 14:56:06 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/07 15:44:40 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/07 17:41:21 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int main() {
 	Bureaucrat a("a", 1);
 	Bureaucrat b("b", 50);
 	Bureaucrat c("c", 150);
+
+	Bureaucrat d(c);
 
 	std::cout << a;
 	std::cout << b;
@@ -51,7 +53,11 @@ int main() {
 	RobotomyRequestForm		r("home");
 	PresidentialPardonForm	p("home");
 
-	c.signAForm(s);
+	ShrubberyCreationForm	x(s);
+	RobotomyRequestForm		y(r);
+	PresidentialPardonForm	z(p);
+
+	d.signAForm(s);
 	b.signAForm(s);
 	c.executeForm(s);
 	b.executeForm(s);
