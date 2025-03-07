@@ -6,13 +6,13 @@
 #    By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/07 14:56:11 by ade-beco          #+#    #+#              #
-#    Updated: 2025/03/07 14:58:16 by ade-beco         ###   ########.fr        #
+#    Updated: 2025/03/07 15:02:34 by ade-beco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=		ex02_exec
 
-SRCS 		=		main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
+SRCS 		=		main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJECTS		=		$(SRCS:.cpp=.o)
 

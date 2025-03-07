@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 14:56:06 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/07 14:58:35 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/07 15:01:57 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 #include <iostream>
 
@@ -48,4 +49,5 @@ int main() {
 
 	ShrubberyCreationForm	s("home");
 	RobotomyRequestForm		r("home");
+	PresidentialPardonForm	p("home");
 }
