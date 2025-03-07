@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 14:56:06 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/07 15:01:57 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/07 15:44:40 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,20 @@ int main() {
 	ShrubberyCreationForm	s("home");
 	RobotomyRequestForm		r("home");
 	PresidentialPardonForm	p("home");
+
+	c.signAForm(s);
+	b.signAForm(s);
+	c.executeForm(s);
+	b.executeForm(s);
+	std::cout << std::endl;
+
+	b.signAForm(r);
+	b.executeForm(r);
+	a.executeForm(r);
+	std::cout << std::endl;
+
+	a.signAForm(p);
+	a.executeForm(p);
+	std::cout << std::endl;
+
 }

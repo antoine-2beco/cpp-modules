@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 11:36:57 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/07 15:26:01 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/07 15:27:02 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,10 @@ void	Bureaucrat::executeForm( AForm const & form ) {
 		std::cout << getName() << " executed " << form.getName() << std::endl;
 	}
 	catch ( AForm::NotSignedException &e ) {
-		std::cout << getName() << " couldn't executed " << form.getName() << "because" << e.what() << std::endl;
+		std::cout << getName() << " couldn't executed " << form.getName() << " because " << e.what() << std::endl;
 	}
 	catch ( AForm::GradeTooLowException &e ) {
-		std::cout << getName() << " couldn't executed " << form.getName() << "because" << e.what() << std::endl;
+		std::cout << getName() << " couldn't executed " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 

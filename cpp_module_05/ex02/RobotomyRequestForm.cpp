@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 14:55:44 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/07 14:59:42 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/07 15:42:49 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,16 @@ const std::string	RobotomyRequestForm::getTarget() const {
 }
 
 void	RobotomyRequestForm::execute( Bureaucrat const & executor ) const {
-	;
+	if ( getSigned() == false )
+		throw AForm::NotSignedException();
+	else if ( getGradeToExecute() < executor.getGrade() )
+		throw AForm::GradeTooLowException();
+	else {
+        int  i;
+        if ( i % 2 == 0 )
+            std::cout << "BZZZZZT! " << _target << " has been robotomized!" << std::endl;
+        else
+            std::cout << "Robotomy failed! " << _target << " is still alive." << std::endl;
+        i++;
+    }
 }
