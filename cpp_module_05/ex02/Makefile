@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/03/05 16:04:39 by ade-beco          #+#    #+#              #
-#    Updated: 2025/03/07 14:20:11 by ade-beco         ###   ########.fr        #
+#    Created: 2025/03/07 14:56:11 by ade-beco          #+#    #+#              #
+#    Updated: 2025/03/07 14:56:23 by ade-beco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=		ex02_exec
 
-SRCS 		=		main.cpp Bureaucrat.cpp AForm.cpp
+SRCS 		=		main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
 
 OBJECTS		=		$(SRCS:.cpp=.o)
 

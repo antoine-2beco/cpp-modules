@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 12:56:28 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/07 14:01:59 by ade-beco         ###   ########.fr       */
+/*   Created: 2025/03/07 14:55:53 by ade-beco          #+#    #+#             */
+/*   Updated: 2025/03/07 14:55:55 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ class AForm {
 		const int			getGradeToSign() const;
 		const int 			getGradeToExecute() const;
 
-		virtual void				beSigned( const Bureaucrat& bureaucrat ) = 0;
+		void				beSigned( const Bureaucrat& bureaucrat );
+
+		virtual void		execute( Bureaucrat const & executor ) const = 0;
+
 
 		class GradeTooHighException : public std::exception {
 			public :
