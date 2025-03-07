@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 14:56:06 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/07 17:41:21 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/07 18:04:49 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 #include <iostream>
 
@@ -72,4 +73,11 @@ int main() {
 	a.executeForm(p);
 	std::cout << std::endl;
 
+	Intern	someIntern;
+	AForm*	internForm;
+
+	internForm = someIntern.makeForm("presidential pardon", "elon");
+
+	a.signAForm(*internForm);
+	a.executeForm(*internForm);
 }
