@@ -6,12 +6,12 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:04:13 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/07 14:05:00 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:19:49 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 #include <iostream>
 
@@ -45,16 +45,16 @@ int main() {
 	std::cout << std::endl;
 
 
-	Form contract("contract", 75);
-	//Form contract2("contract2", 0);
-	Form contract3("contract3", 75, 75);
+	AForm contract("contract", 75);
+	//AForm contract2("contract2", 0);
+	AForm contract3("contract3", 75, 75);
 
 	std::cout << contract;
 	std::cout << contract3;
 	std::cout << std::endl;
 
-	c.signForm(contract);
-	b.signForm(contract);
+	c.signAForm(contract);
+	b.signAForm(contract);
 	std::cout << std::endl;
 
 	std::cout << contract;

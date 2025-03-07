@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AForm_HPP
+# define AForm_HPP
 
 # include "Bureaucrat.hpp"
 
@@ -19,27 +19,27 @@
 
 class Bureaucrat;
 
-class Form {
+class AForm {
 	const std::string	_name;
 	bool				_signed;
 	const int			_gradeToSign;
 	const int			_gradeToExecute;
 	
-	Form();
+	AForm();
 
 	public :
-		Form( std::string name, int gradeToSign );
-		Form( std::string name, int gradeToSign, int gradeToExecute );
-		Form( const Form& cpy );
-		Form& operator=( const Form& cpy );
-		~Form();
+		AForm( std::string name, int gradeToSign );
+		AForm( std::string name, int gradeToSign, int gradeToExecute );
+		AForm( const AForm& cpy );
+		AForm& operator=( const AForm& cpy );
+		~AForm();
 
 		const std::string	getName() const;
 		const bool			getSigned() const;
 		const int			getGradeToSign() const;
 		const int 			getGradeToExecute() const;
 
-		void				beSigned( const Bureaucrat& bureaucrat );
+		void				beSigned( const Bureaucrat& bureaucrat ) = 0;
 
 		class GradeTooHighException : public std::exception {
 			public :
@@ -51,6 +51,6 @@ class Form {
 		};
 };
 
-std::ostream& operator<<( std::ostream& o, const Form& src );
+std::ostream& operator<<( std::ostream& o, const AForm& src );
 
 #endif

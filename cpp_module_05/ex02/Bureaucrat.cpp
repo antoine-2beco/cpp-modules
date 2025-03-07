@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 11:36:57 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/07 14:02:36 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:19:49 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,13 @@ void	Bureaucrat::decrementGrade() {
 	_grade++;
 }
 
-void	Bureaucrat::signForm( Form& form ) {
+void	Bureaucrat::signAForm( AForm& AForm ) {
 	try {
-		form.beSigned(*this);
-		std::cout << getName() << " signed " << form.getName() << std::endl;
+		AForm.beSigned(*this);
+		std::cout << getName() << " signed " << AForm.getName() << std::endl;
 	}
-	catch (Form::GradeTooLowException &e) {
-		std::cout << getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	catch (AForm::GradeTooLowException &e) {
+		std::cout << getName() << " couldn't sign " << AForm.getName() << " because " << e.what() << std::endl;
 	}
 }
 

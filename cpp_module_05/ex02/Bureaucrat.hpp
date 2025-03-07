@@ -6,18 +6,18 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 11:31:46 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/07 14:02:03 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:19:49 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-# include "Form.hpp"
+# include "AForm.hpp"
 
 # include <iostream>
 
-class Form;
+class AForm;
 
 class	Bureaucrat {
 	const std::string	_name;
@@ -37,7 +37,7 @@ class	Bureaucrat {
 		void	incrementGrade();
 		void	decrementGrade();
 
-		void	signForm( Form& form );
+		void	signAForm( AForm& AForm );
 
 		class	GradeTooHighException : public std::exception {
 			public :
