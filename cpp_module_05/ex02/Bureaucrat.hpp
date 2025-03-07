@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 11:31:46 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/07 14:19:49 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/07 15:19:32 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class	Bureaucrat {
 		void	decrementGrade();
 
 		void	signAForm( AForm& AForm );
+		void	executeForm( AForm const & form );
 
 		class	GradeTooHighException : public std::exception {
 			public :
