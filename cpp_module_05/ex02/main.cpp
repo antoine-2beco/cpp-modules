@@ -6,13 +6,14 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 14:56:06 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/07 14:56:08 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:58:35 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 #include <iostream>
 
@@ -46,4 +47,5 @@ int main() {
 	std::cout << std::endl;
 
 	ShrubberyCreationForm	s("home");
+	RobotomyRequestForm		r("home");
 }

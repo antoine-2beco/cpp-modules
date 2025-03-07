@@ -6,12 +6,12 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 14:55:53 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/07 14:55:55 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:57:34 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AForm_HPP
-# define AForm_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include "Bureaucrat.hpp"
 
