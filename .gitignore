@@ -1,0 +1,10 @@
+*
+*/*
+
+!*.cpp
+!*.hpp
+!Makefile
+!ex*
+!cpp_module*
+
+ex*_exec
