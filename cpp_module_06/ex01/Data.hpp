@@ -6,11 +6,16 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:20:13 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/08 16:21:11 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/08 16:29:03 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef DATA_HPP
+# define DATA_HPP
 
 struct Data {
     char    firstLetter;
     int     age;
-}
+};
+
+#endif

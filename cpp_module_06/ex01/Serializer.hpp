@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:00:08 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/08 16:25:40 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/08 16:28:40 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ class Serializer {
     Serializer();
     Serializer( const Serializer& cpy );
     Serializer& operator=( const Serializer& cpy );
-    ~Serializer()
+    ~Serializer();
 
     public:
-        static unintptr_t   serialize( Data* ptr );
-        static Data*        deserialize( unintptr_t raw);
+        static uintptr_t   serialize( Data* ptr );
+        static Data*        deserialize( uintptr_t raw);
 };
 
 #endif
