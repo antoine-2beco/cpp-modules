@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 13:17:26 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/08 13:37:21 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/08 14:25:28 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ ScalarConverter& ScalarConverter::operator=( const ScalarConverter& cpy ) { retu
 
 ScalarConverter::~ScalarConverter() {}
 
+static void charCase( char c ) { 
+    std::cout << "char: '" << c << "'"<< std::endl;
+    std::cout << "int: " << static_cast<int>(c) << std::endl; 
+    std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
+    std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl; 
+}
+
 static void intCase( const std::string& param ) {
     int i = std::atoi(param.c_str());
     if ((i >= 0 && i < 32) || i == 127)
@@ -33,6 +40,32 @@ static void intCase( const std::string& param ) {
     std::cout << "int: " << i << std::endl;
     std::cout << "float: " << static_cast<float>(i) << ".0f" << std::endl;
     std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
+}
+
+static void floatCase( float f ) {
+    char    sign = '\0';
+    if (std::isinf(f) && f > 0)
+        sign = '+';
+    double  d = static_cast<double>(f);
+    int     i = static_cast<int>(f);
+    if (d != i || i < 0 || i > 126)
+        std::cout << "char : impossible" << std::endl;
+    else if ((i <= 0 || i > 32) || i == 127)
+        std::cout << "char: Non displayable" << std::endl;
+    else
+        std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
+    if (f > std::numeric_limits<int>::max() || f < std::numeric_limits<int>::min())
+        std::cout << "int: impossible" << std::endl;
+    else
+        std::cout << "int: " << i << std::endl;
+    if (i == f)
+        std::cout << "float: " << sign << f << ".0f" << std::endl;
+    else
+        std::cout << "float: " << sign << f << "f" << std::endl;
+    if (i == d)
+        std::cout << "double: " << d << ".0" << std::endl;
+    else
+        std::cout << "double: " << d << std::endl;
 }
 
 static void doubleCase( double d ) {
@@ -66,12 +99,6 @@ static void doubleCase( double d ) {
         std::cout << "double: " << d << std::endl;
 }
 
-static void charCase( char c ) {
-    std::cout << "char: '" << c << "'"<< std::endl;
-    std::cout << "int: " << static_cast<int>(c) << std::endl;
-    std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
-    std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl; 
-}
 
 static void specialCase( const std::string& str ) {
     std::cout << "char: impossible" << std::endl;
@@ -103,7 +130,7 @@ static bool isAllDigits( const std::string& str ) {
     int size = str.length();
     int minus = 0;
 
-    for (int i = 0; i > size; i++) {
+    for (int i = 0; i < size; i++) {
         if (str[i] == '-')
             minus++;
         else if (str[i] < '0' || str[i] > '9')
@@ -158,22 +185,29 @@ static int getType( const std::string& str ) {
 
 void ScalarConverter::convert( const std::string& str ) {
     if (str.empty())
-        return (impossibleCase());
+        return impossibleCase();
     else if ( str == "-inf" || str == "+inf" || str == "nan" || \
             str == "-inff" || str == "+inff" || str == "nanf" )
-        return ( specialCase(str) ) ;
+        return specialCase(str);
     else if (str.length() == 1 && str[0] > 31 && (str[0] < 48 || str[0] > 57))
-        return (charCase(str[0]));
+        return charCase(str[0]);
     else if (isAllDigits(str))
     {
         char*    endptr;
         long    l = std::strtoll(str.c_str(), &endptr, 10);
         if (l < std::numeric_limits<int>::min() || l > std::numeric_limits<int>::max())
-            return (doubleCase(std::strtod(str.c_str(), &endptr)));
-        return (intCase(str));
+            return doubleCase(std::strtod(str.c_str(), &endptr));
+        return intCase(str);
+    }
+    else if (isFloat(str)) {
+        char*   endptr;
+        long    l = std::strtoll(str.c_str(), &endptr, 10);
+        if (l < std::numeric_limits<int>::min() || l > std::numeric_limits<int>::max())
+            return doubleCase(std::strtod(str.c_str(), &endptr));
+        return floatCase(std::atof(str.c_str()));
     }
     else if (isDouble(str)) {
-        char *endptr;
+        char*   endptr;
         return doubleCase(std::strtod(str.c_str(), &endptr));
     }
     else impossibleCase();
