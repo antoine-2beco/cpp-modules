@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 13:17:26 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/08 13:17:27 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/08 13:34:00 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,44 @@ static bool isAllDigits( const std::string& str ) {
             return false;
     }
     return (minus <= 1);
+}
+
+static bool isFloat( const std::string& str ) {
+    int nbMinus = 0;
+    int nbPoint = 0;
+    int nbFChar = 0;
+    int size = str.length();
+
+    if (str[size - 1] != 'f')
+        return false;
+    for (int i = 0; i < size; i++) {
+        if (str[i] == '-')
+            nbMinus++;
+        else if (str[i] == '.')
+            nbPoint++;
+        else if (str[i] == 'f')
+            nbFChar++;
+        else if (str[i] < '0' || str[i] > '9')
+            return false;
+    }
+    return (nbMinus <= 1 && nbPoint == 1 && nbFChar == 1);
+}
+
+static bool isDouble( const std::string& str ) {
+    int nbMinus = 0;
+    int nbPoint = 0;
+    int size = str.length();
+
+    for (int i = 0; i < size; i++) {
+        if (str[i] == '-')
+            nbMinus++;
+        else if (str[i] == '.')
+            nbPoint++;
+        else if (str[i] < '0' || str[i] > '9')
+            return false;
+    }
+    
+    return (nbMinus <= 1 && nbPoint == 1);
 }
 
 static int getType( const std::string& str ) {
