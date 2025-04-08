@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:21:57 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/13 14:42:50 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/08 13:04:04 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,21 @@
 
 int main() {
     ScalarConverter::convert("c");
-    ScalarConverter::convert("12");
+    std::cout << std::endl;
     ScalarConverter::convert("50.0f");
+    std::cout << std::endl;
     ScalarConverter::convert("50.5");
+    std::cout << std::endl;
     ScalarConverter::convert("+inf");
+    std::cout << std::endl;
     ScalarConverter::convert("-inf");
+    std::cout << std::endl;
     ScalarConverter::convert("nan");
+    std::cout << std::endl;
     ScalarConverter::convert("+inff");
+    std::cout << std::endl;
     ScalarConverter::convert("-inff");
+    std::cout << std::endl;
     ScalarConverter::convert("nanf");
+    std::cout << std::endl;
 }
