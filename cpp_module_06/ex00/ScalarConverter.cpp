@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 13:17:26 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/08 13:34:00 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/08 13:37:21 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,5 +172,10 @@ void ScalarConverter::convert( const std::string& str ) {
             return (doubleCase(std::strtod(str.c_str(), &endptr)));
         return (intCase(str));
     }
+    else if (isDouble(str)) {
+        char *endptr;
+        return doubleCase(std::strtod(str.c_str(), &endptr));
+    }
+    else impossibleCase();
 }
 
