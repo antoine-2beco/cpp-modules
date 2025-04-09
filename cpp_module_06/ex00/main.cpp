@@ -6,11 +6,13 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:21:57 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/08 14:32:55 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/09 14:14:01 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+#include <iostream>
 
 int main() {
     ScalarConverter::convert("c");

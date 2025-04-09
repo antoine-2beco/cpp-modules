@@ -6,13 +6,14 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 13:17:26 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/08 14:25:28 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/09 14:14:31 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
 #include <iostream>
+#include <cmath>
 
 ScalarConverter::ScalarConverter() {}
 
