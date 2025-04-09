@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 13:17:23 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/03/13 14:37:50 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/08 16:02:47 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 # define SCALARCONVERTER_HPP
 
 # include <iostream>
-
-enum type {
-    CHAR,
-    INT,
-    FLOAT,
-    DOUBLE
-};
 
 class ScalarConverter {
 	
