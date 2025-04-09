@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 13:17:26 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/09 14:14:31 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/09 14:28:46 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,6 @@ static void doubleCase( double d ) {
         std::cout << "double: " << d << std::endl;
 }
 
-
 static void specialCase( const std::string& str ) {
     std::cout << "char: impossible" << std::endl;
     std::cout << "int: impossible" << std::endl;
@@ -174,7 +173,6 @@ static bool isDouble( const std::string& str ) {
         else if (str[i] < '0' || str[i] > '9')
             return false;
     }
-    
     return (nbMinus <= 1 && nbPoint == 1);
 }
 
