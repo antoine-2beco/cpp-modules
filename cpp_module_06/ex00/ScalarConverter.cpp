@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 13:17:26 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/09 14:28:46 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/09 17:33:25 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include <iostream>
 #include <cmath>
+#include <limits>
+#include <cstdlib>
 
 ScalarConverter::ScalarConverter() {}
 
@@ -174,12 +176,6 @@ static bool isDouble( const std::string& str ) {
             return false;
     }
     return (nbMinus <= 1 && nbPoint == 1);
-}
-
-static int getType( const std::string& str ) {
-    if (str.length() == 1 && str[0] > 31 && ( str[0] < 48 && str[0] > 57 ))
-        return CHAR;
-    return 0;
 }
 
 void ScalarConverter::convert( const std::string& str ) {
