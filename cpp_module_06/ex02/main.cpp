@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 17:55:05 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/08 18:10:59 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/09 16:10:51 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,11 @@
 #include <cstdlib>
 #include <stdexcept>
 
-Base* generate( void );
-void identify(Base* p);
-void identify(Base& p);
-
 Base* generate( void ) {
     int randomNum = std::rand() % 3;
     switch (randomNum) {
         case 0:
-            return (new A());
+            return new A();
         case 1:
             return new B();
         case 2:
@@ -61,7 +57,7 @@ void identify( Base* p ) {
 
 void identify( Base& p ) {
     try {
-        A* a = dynamic_cast<A *>(p);
+        A& a = dynamic_cast<A &>(p);
         std::cout << "The object pointed by p is of type A." << std::endl;
         (void)a;
         return;
@@ -70,7 +66,7 @@ void identify( Base& p ) {
         (void)e;
     }
     try {
-        B* b = dynamic_cast<B *>(p);
+        B& b = dynamic_cast<B &>(p);
         std::cout << "The object pointed by p is of type B." << std::endl;
         (void)b;
         return;
@@ -79,7 +75,7 @@ void identify( Base& p ) {
         (void)e;
     }
     try {
-        C* c = dynamic_cast<C *>(p);
+        C& c = dynamic_cast<C &>(p);
         std::cout << "The object pointed by p is of type C." << std::endl;
         (void)c;
         return;
@@ -89,8 +85,10 @@ void identify( Base& p ) {
     }
 }
 
-int main(void){
-	Base *test = generate();
+int main(){
+    srand(time(NULL));
+	
+    Base *test = generate();
 	if (test)
 		identify(test);
 	Base *test1 = generate();

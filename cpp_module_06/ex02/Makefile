@@ -6,13 +6,13 @@
 #    By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/05 16:04:39 by ade-beco          #+#    #+#              #
-#    Updated: 2025/04/08 18:05:06 by ade-beco         ###   ########.fr        #
+#    Updated: 2025/04/09 16:10:45 by ade-beco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=		ex02_exec
 
-SRCS 		=		main.cpp
+SRCS 		=		main.cpp Base.cpp
 
 OBJECTS		=		$(SRCS:.cpp=.o)
 
