@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:15:22 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/10 16:49:25 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/10 17:00:45 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ template <typename T>
 class Array {
 
     T               *array;
-    unsigned int    size;
+    unsigned int    _size;
 
     public:
         Array();
