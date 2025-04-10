@@ -6,11 +6,12 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:28:24 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/10 15:28:40 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/10 15:58:30 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
+#include "Array.tpp"
 
 int main() {
     ;

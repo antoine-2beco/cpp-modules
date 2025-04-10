@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:15:22 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/10 15:27:00 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/10 16:01:26 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Array {
         Array();
         Array( unsigned int n );
         Array( const Array &cpy );
-        const Array &operator=( const Array &cpy );
+        Array &operator=( const Array &cpy );
         ~Array();
 };
 

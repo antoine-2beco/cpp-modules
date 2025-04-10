@@ -3,6 +3,7 @@
 
 !*.cpp
 !*.hpp
+!*.tpp
 !Makefile
 !ex*
 !cpp_module*
