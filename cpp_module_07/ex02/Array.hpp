@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:15:22 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/10 16:01:26 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/10 16:49:25 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@ class Array {
         Array( const Array &cpy );
         Array &operator=( const Array &cpy );
         ~Array();
+        T & operator[]( unsigned int n );
+
+        unsigned int size() const;
+
+        class OutOfBoundsException : public std::exception {
+            public:
+                virtual const char* what() const throw() { return "index out of bounds"; }
+        };
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:29:53 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/10 16:20:37 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/10 16:46:46 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define ARRAY_TPP
 
 #include <iostream>
+
+#include "Array.hpp"
 
 template <typename T>
 Array<T>::Array() : size(0) {
@@ -46,6 +48,18 @@ Array<T> & Array<T>::operator=( const Array &cpy ) {
     for (int i = 0; i < size; i++)
         array[i] = cpy.array[i];
     return *this;
+}
+
+template <typename T>
+T & Array<T>::operator[]( unsigned int n ) {
+    if (n >= size || array == NULL)
+        throw Array<T>::OutOfBoundsException();
+    return array[n];
+}
+
+template <typename T>
+unsigned int    Array<T>::size() const {
+    return size;
 }
 
 #endif
