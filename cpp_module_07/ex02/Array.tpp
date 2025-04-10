@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 15:29:53 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/10 15:59:49 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/10 16:20:37 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,9 @@ Array<T> & Array<T>::operator=( const Array &cpy ) {
     if (array != NULL)
         delete [] array;
     size = cpy.size;
+    array = new T[size]();
     for (int i = 0; i < size; i++)
-        array = cpy.array;
+        array[i] = cpy.array[i];
     return *this;
 }
 
