@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 13:17:26 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/09 17:33:25 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/10 13:22:50 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 #include <iostream>
 #include <cmath>
-#include <limits>
 #include <cstdlib>
 
 ScalarConverter::ScalarConverter() {}
