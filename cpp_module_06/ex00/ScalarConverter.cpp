@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 13:17:26 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/04/10 13:22:50 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/04/14 11:49:33 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,6 +177,22 @@ static bool isDouble( const std::string& str ) {
     return (nbMinus <= 1 && nbPoint == 1);
 }
 
+static void   convertDoubleCase( const std::string& str ) {
+    char*       endptr;
+    double     value;
+
+    try {
+        value = strtod(str.c_str(), &endptr);
+        doubleCase(value);
+    }
+    catch ( const std::invalid_argument &e ) {
+        std::cout << "Error : strtod: Invalid Argument : " << e.what() << std::endl;
+    }
+    catch ( const std::out_of_range &e ) {
+        std::cout << "Error : strtod: Out Of Range : " << e.what() << std::endl;
+    }
+}
+
 void ScalarConverter::convert( const std::string& str ) {
     if (str.empty())
         return impossibleCase();
@@ -187,22 +203,22 @@ void ScalarConverter::convert( const std::string& str ) {
         return charCase(str[0]);
     else if (isAllDigits(str))
     {
-        char*    endptr;
+        char    *endptr;
         long    l = std::strtoll(str.c_str(), &endptr, 10);
         if (l < std::numeric_limits<int>::min() || l > std::numeric_limits<int>::max())
-            return doubleCase(std::strtod(str.c_str(), &endptr));
+            return convertDoubleCase(str);
         return intCase(str);
     }
     else if (isFloat(str)) {
-        char*   endptr;
+        char    *endptr;
         long    l = std::strtoll(str.c_str(), &endptr, 10);
         if (l < std::numeric_limits<int>::min() || l > std::numeric_limits<int>::max())
-            return doubleCase(std::strtod(str.c_str(), &endptr));
+            return convertDoubleCase(str);
         return floatCase(std::atof(str.c_str()));
     }
     else if (isDouble(str)) {
         char*   endptr;
-        return doubleCase(std::strtod(str.c_str(), &endptr));
+        return convertDoubleCase(str);
     }
     else impossibleCase();
 }
