@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 13:21:50 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/05/06 13:29:42 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/05/06 13:49:10 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,10 @@ Span&    Span::operator=( const Span& cpy ) {
 }
 
 Span::~Span() {}
+
+void    Span::addNumber( const int n ) {
+    if (_list.size() == _maximumValue)
+        throw maximumValueStoredReachedException();
+    _list.push_back(n);
+}
 
