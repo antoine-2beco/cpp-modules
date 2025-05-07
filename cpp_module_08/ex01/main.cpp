@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 13:16:06 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/05/06 16:34:45 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/05/07 13:45:08 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ int main() {
     d->addNumber(3);
 
     std::cout << "d : " << *d << std::endl;
-    std::cout << "shortestSpan in d : " << (*d).shortestSpan() << std::endl;
-    std::cout << "longestSpan in d : " << (*d).longestSpan() << std::endl;
+    (*d).shortestSpan();
+    (*d).longestSpan();
+    std::cout << "d : " << *d << std::endl;
+    d->fillList();
     std::cout << "d : " << *d << std::endl;
 
     delete (d);
