@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:47:45 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/05/22 16:04:32 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/05/22 16:14:18 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,8 +110,23 @@ int     BitcoinExchange::validDate( const std::string &date ) {
     return (0);
 }
 
-int     BitcoinExchange::validValue( const std::string &value ) {
-    (void) value;
+int     BitcoinExchange::validValue( const std::string &s_value ) {
+    int     value;
+    char    *endptr;
+
+    if (!isAllDigits(value)) {
+        std::cerr << "Error : bad input => " << value << std::endl;
+        return (1);
+    }
+    value = std::strtol(value, &endptr, 10);
+    if (value < 0) {
+        std::cerr << "Error : not a positive number => " << s_value << std::endl;
+        return (1);
+    }
+    if (value > 1000) {
+        std::cerr << "Error : too large number => " << s_value << std::endl;
+        return (1);
+    }
     return 0;
 }
 

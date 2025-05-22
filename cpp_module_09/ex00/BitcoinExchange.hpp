@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:47:57 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/05/22 15:47:58 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/05/22 16:08:54 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class BitcoinExchange {
 
     int         isAllDigits(const std::string &s );
     int         validDate( const std::string &date );
-    int         validValue( const std::string &value );
+    int         validValue( const std::string &s_value );
     void        processLine( const std::string &line );
 
     public:
