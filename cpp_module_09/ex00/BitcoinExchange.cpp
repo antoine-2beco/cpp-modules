@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:47:45 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/05/22 16:14:18 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/05/22 16:25:28 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,11 +114,11 @@ int     BitcoinExchange::validValue( const std::string &s_value ) {
     int     value;
     char    *endptr;
 
-    if (!isAllDigits(value)) {
-        std::cerr << "Error : bad input => " << value << std::endl;
-        return (1);
-    }
-    value = std::strtol(value, &endptr, 10);
+    //if (!isAllDigits(s_value)) {
+    //    std::cerr << "Error : bad input => " << s_value << std::endl;
+    //    return (1);
+    //}
+    value = std::strtol(s_value.c_str(), &endptr, 10);
     if (value < 0) {
         std::cerr << "Error : not a positive number => " << s_value << std::endl;
         return (1);
@@ -127,13 +127,15 @@ int     BitcoinExchange::validValue( const std::string &s_value ) {
         std::cerr << "Error : too large number => " << s_value << std::endl;
         return (1);
     }
-    return 0;
+    return (0);
 }
 
 void    BitcoinExchange::processLine( const std::string &line ) {
     std::string     date;
     std::string     s_value;
+    int             value;
     int             pos;
+    char            *endptr;
 
     pos = line.find(" | ");
     if (pos == static_cast<int>(std::string::npos)) {
@@ -145,6 +147,11 @@ void    BitcoinExchange::processLine( const std::string &line ) {
 
     if (validDate(date) || validValue(s_value))
         return;
+
+    value = std::strtol(s_value.c_str(), &endptr, 10);
+
+    std::map<std::string, float>::iterator it = _data.lower_bound(date);
+    std::cout << date << " => " << s_value << " = " << (value * it->second) << std::endl;
 }
 
 void    BitcoinExchange::run( const std::string &dataFile ) {
