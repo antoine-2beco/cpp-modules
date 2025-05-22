@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:47:57 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/05/08 12:59:41 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/05/22 11:53:23 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 # define BITCOINEXCHANGE_HPP
 
 #include <map>
+#include <stdlib.h>
 #include <iostream>
 #include <fstream>
 
 class BitcoinExchange {
 
-    std::map<std::string, std::string>    _data;
+    std::map<std::string, float>    _data;
 
-    void    readData( const std::string &dataFile );
+    std::pair<std::string, float>   getData( const std::string &content );
+    void        readData( const std::string &dataFile );
 
     public:
         BitcoinExchange();

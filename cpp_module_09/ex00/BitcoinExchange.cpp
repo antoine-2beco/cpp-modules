@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:47:45 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/05/08 13:30:22 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/05/22 11:53:11 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,38 @@ BitcoinExchange::BitcoinExchange( const BitcoinExchange &cpy ) {
 }
 
 BitcoinExchange& BitcoinExchange::operator=( const BitcoinExchange &cpy ) {
-    if ( this != &cpy )
-        ;
+    (void) cpy;
     return *this;
 }
 
 BitcoinExchange::~BitcoinExchange() {}
 
+std::pair<std::string, float>   BitcoinExchange::getData( const std::string &content ) {
+    std::pair<std::string, float>  line;
+    std::string                     date;
+    float                          value;
+    char                            *endptr;
+    int                             pos;
+
+    pos = content.find(',');
+    date = content.substr(0, pos);
+    std::cout << date << std::endl;
+    value = std::strtof(content.substr(pos + 1, content.length()).c_str(), &endptr);
+    std::cout << value << std::endl;
+    std::cout << "====" << std::endl;
+    line = std::make_pair(date, value);
+    return (line);
+}
+
 void BitcoinExchange::readData( const std::string &dataFile ) {
-    std::ifstream   ifs(dataFile);
+    std::ifstream   ifs(dataFile.c_str());
     std::string     content;
-    std::string     delimiter = " | ";
 
     if (ifs.is_open()) {
-        while (getline(ifs, content, '\0')) {
-
+        getline(ifs, content, '\n');
+        while (getline(ifs, content, '\n')) {
+            std::cout << content << " :" << std::endl;
+            _data.insert(getData(content));
         }
     }
 }
