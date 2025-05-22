@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:47:45 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/05/22 11:53:11 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/05/22 13:44:35 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,34 @@ std::pair<std::string, float>   BitcoinExchange::getData( const std::string &con
 
     pos = content.find(',');
     date = content.substr(0, pos);
-    std::cout << date << std::endl;
     value = std::strtof(content.substr(pos + 1, content.length()).c_str(), &endptr);
-    std::cout << value << std::endl;
-    std::cout << "====" << std::endl;
     line = std::make_pair(date, value);
     return (line);
 }
 
-void BitcoinExchange::readData( const std::string &dataFile ) {
-    std::ifstream   ifs(dataFile.c_str());
+void BitcoinExchange::readData() {
+    std::ifstream   ifs(DATA_FILE_NAME);
     std::string     content;
 
     if (ifs.is_open()) {
-        getline(ifs, content, '\n');
+        if (!getline(ifs, content, '\n')) {
+            std::cerr << "error : data.csv file is empty" << std::endl;
+            ifs.close();
+            exit(EXIT_FAILURE);
+        }
         while (getline(ifs, content, '\n')) {
-            std::cout << content << " :" << std::endl;
             _data.insert(getData(content));
         }
     }
+    else {
+        std::cerr << "error : opening data.csv file failed" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    ifs.close();
 }
 
 void    BitcoinExchange::run( const std::string &dataFile ) {
-    readData(dataFile);
+    readData();
+    (void)dataFile;
 }
 

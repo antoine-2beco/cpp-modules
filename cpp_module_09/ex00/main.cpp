@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:54:26 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/05/22 11:50:19 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/05/22 13:45:38 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int main(int argc, char *argv[]) {
     BitcoinExchange btc;
 
-    if (argc != 2)
+    if (argc != 2) {
         std::cerr << "error : bad argument" << std::endl;
-    
+        exit(EXIT_FAILURE);
+    }
     btc.run(argv[1]);
-
 }
 
