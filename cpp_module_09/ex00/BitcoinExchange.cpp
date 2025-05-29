@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:47:45 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/05/22 16:25:28 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/05/29 14:16:01 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,19 +70,25 @@ int  BitcoinExchange::isAllDigits(const std::string &s ) {
 }
 
 int     BitcoinExchange::validDate( const std::string &date ) {
-    std::string s_year = date.substr(0, 3);
-    std::string s_month = date.substr(5, 6);
-    std::string s_day = date.substr(8, 9);
     char        *endptr;
+    int         nbMinus = 0;
 
-    if (!isAllDigits(s_year) && !isAllDigits(s_month) && !isAllDigits(s_day)) {
+    for (long unsigned int i = 0; i < date.length(); i++) {
+        if (date[i] == '-')
+            nbMinus++;
+        else if (date[i] < '0' || date[i] > '9') {
+            std::cerr << "Error : bad input => " << date << std::endl;
+            return (1);
+        }
+    }
+    if (date.length() != 10 || nbMinus != 2) {
         std::cerr << "Error : bad input => " << date << std::endl;
         return (1);
     }
 
-    int     year = strtol(s_year.c_str(), &endptr, 10);
-    int     month = strtol(s_month.c_str(), &endptr, 10);
-    int     day = strtol(s_day.c_str(), &endptr, 10);
+    int     year = strtol(date.substr(0, 4).c_str(), &endptr, 10);
+    int     month = strtol(date.substr(5, 6).c_str(), &endptr, 10);
+    int     day = strtol(date.substr(8, 9).c_str(), &endptr, 10);
     int     days;
 
     if (month < 1 || month > 12) {
@@ -98,9 +104,9 @@ int     BitcoinExchange::validDate( const std::string &date ) {
             days = 30;
             break;
         case 2 :
-            days = 29;
-            if ((year % 400 ==0) && (year % 100 == 0) && (year % 400 == 0))
-                days = 28;
+            days = 28;
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+                days = 29;
             break;
     }
     if (day > days) {
@@ -111,18 +117,27 @@ int     BitcoinExchange::validDate( const std::string &date ) {
 }
 
 int     BitcoinExchange::validValue( const std::string &s_value ) {
-    int     value;
-    char    *endptr;
+    long long   value;
+    char        *endptr;
+    int         nbPoint = 0;
 
-    //if (!isAllDigits(s_value)) {
-    //    std::cerr << "Error : bad input => " << s_value << std::endl;
-    //    return (1);
-    //}
-    value = std::strtol(s_value.c_str(), &endptr, 10);
-    if (value < 0) {
-        std::cerr << "Error : not a positive number => " << s_value << std::endl;
+    for (long unsigned int i = 0; i < s_value.length(); i++) {
+        if (s_value[i] == '-') {
+            std::cerr << "Error : not a positive number => " << s_value << std::endl;
+            return (1);
+        }
+        else if (s_value[i] == '.')
+            nbPoint++;
+        else if (s_value[i] < '0' || s_value[i] > '9') {
+            std::cerr << "Error : bad input => " << s_value << std::endl;
+            return (1);
+        }
+    }
+    if (nbPoint > 1) {
+        std::cerr << "Error : bad input => " << s_value << std::endl;
         return (1);
     }
+    value = std::strtoll(s_value.c_str(), &endptr, 10);
     if (value > 1000) {
         std::cerr << "Error : too large number => " << s_value << std::endl;
         return (1);
@@ -133,7 +148,7 @@ int     BitcoinExchange::validValue( const std::string &s_value ) {
 void    BitcoinExchange::processLine( const std::string &line ) {
     std::string     date;
     std::string     s_value;
-    int             value;
+    double          value;
     int             pos;
     char            *endptr;
 
@@ -148,10 +163,12 @@ void    BitcoinExchange::processLine( const std::string &line ) {
     if (validDate(date) || validValue(s_value))
         return;
 
-    value = std::strtol(s_value.c_str(), &endptr, 10);
+    value = std::strtod(s_value.c_str(), &endptr);
 
     std::map<std::string, float>::iterator it = _data.lower_bound(date);
-    std::cout << date << " => " << s_value << " = " << (value * it->second) << std::endl;
+    if (it != _data.begin())
+        it--;
+    std::cout << date << " => " << s_value << " = " << (value * it->second) << " : " << it->second << std::endl;
 }
 
 void    BitcoinExchange::run( const std::string &dataFile ) {
