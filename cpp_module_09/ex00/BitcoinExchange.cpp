@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:47:45 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/05/29 14:16:01 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/06/10 10:57:36 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,9 +166,9 @@ void    BitcoinExchange::processLine( const std::string &line ) {
     value = std::strtod(s_value.c_str(), &endptr);
 
     std::map<std::string, float>::iterator it = _data.lower_bound(date);
-    if (it != _data.begin())
+    if (it != _data.begin() && it->first != date)
         it--;
-    std::cout << date << " => " << s_value << " = " << (value * it->second) << " : " << it->second << std::endl;
+    std::cout << date << " => " << s_value << " = " << (value * it->second) << std::endl;
 }
 
 void    BitcoinExchange::run( const std::string &dataFile ) {
