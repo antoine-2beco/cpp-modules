@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 11:02:37 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/06/10 11:32:32 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/06/10 12:03:59 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,18 @@
 # include <stack>
 # include <iostream>
 
+# define TRUE 0
+# define FALSE 1
+
 class RPN {
 
-    std::stack<std::string>         expressionStack;
+    std::stack<char>         expressionStack;
 
-    void    expressionParsing( const std::string &expression );
-    void    expressionProcess();
+    int     expressionParsing( const std::string &expression );
+    int     expressionProcess();
+    int     validElement( const char &element );
+    int     isDigit( const char &element );
+    int     isOperator( const char &element );
 
     public :
         RPN();
