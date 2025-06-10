@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 11:02:14 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/06/10 12:59:16 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/06/10 13:31:06 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int     RPN::validElement( const char &element, int index) {
 }
 
 int     RPN::expressionParsing( const std::string &expression ) {
-    for (int i = expression.length(); i < 0; i--) {
+    for (int i = expression.length() - 1; i != -1; i--) {
         if (expression[i] == ' ')
             ;
         else if (validElement(expression[i], i) == FALSE)

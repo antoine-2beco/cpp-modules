@@ -6,7 +6,7 @@
 #    By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/08 11:47:01 by ade-beco          #+#    #+#              #
-#    Updated: 2025/06/10 11:01:17 by ade-beco         ###   ########.fr        #
+#    Updated: 2025/06/10 13:02:52 by ade-beco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS 		=		main.cpp  RPN.cpp
 OBJECTS		=		$(SRCS:.cpp=.o)
 
 CC			=		c++
-CFLAGS		=		-Wall -Wextra -Werror -std=c++98
+CFLAGS		=		-Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 all: 		$(OBJECTS) $(NAME)
 
