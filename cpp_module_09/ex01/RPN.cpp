@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 11:02:14 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/06/10 13:31:06 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/07/28 13:38:51 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int     RPN::isOperator( const char &element ) {
         return FALSE;
 }
 
-int     RPN::validElement( const char &element, int index) {
+/*int     RPN::validElement( const char &element, int index) {
     if (isDigit(element) == FALSE && isOperator(element) == FALSE) {
         std::cerr << "Error : Not a digit or a operator : " << element << std::endl;
         return FALSE;
@@ -59,7 +59,7 @@ int     RPN::validElement( const char &element, int index) {
         return TRUE;
     else {
         std::cerr << "Error : Does not respect the reverse polish notation" << std::endl;
-        return FALSE;
+        return TRUE;
     }
 }
 
@@ -73,40 +73,52 @@ int     RPN::expressionParsing( const std::string &expression ) {
             expressionStack.push(expression[i]);
     }
     return TRUE;
-}
+}*/
 
-int     RPN::calculate( int first, int second, char sign ) {
+int     RPN::calculate( char sign ) {
+    int a;
+    int b;
+
+    b = expressionStack.top() - '0';
+    expressionStack.pop();
+    a = expressionStack.top() - '0';
+    expressionStack.pop();
+
+    std::cout << a << " " << b << " " << sign << std::endl;
+
     switch (sign) {
         case '+':
-            return (first + second);
+            return (a + b);
         case '-':
-            return (first - second);
-        case '/':
-            return (first / second);
+            return (a - b);
+        case '/':  {
+            if (b == 0) {
+                std::cerr << "Error : Division by 0" << std::endl;
+                exit (EXIT_FAILURE);
+            }
+            return (a / b);
+                }
         case '*':
-            return (first * second);
+            return (a * b);
     }
     return 0;
 }
 
-int     RPN::expressionProcess() {
-    int tempElement;
-    long long int expressionResult;
-
-    expressionResult = expressionStack.top() - '0';
-    expressionStack.pop();
-    while (expressionStack.size() != 0) {
-        tempElement = expressionStack.top() - '0';
-        expressionStack.pop();
-        expressionResult = calculate(expressionResult, tempElement, expressionStack.top());
-        expressionStack.pop();
+int     RPN::expressionProcess( std::string expression ) {
+    for (unsigned long i = 0; i != expression.length(); i++) {
+        if (expression[i] == ' ')
+            ;
+        else if (isOperator(expression[i]) == TRUE)
+            expressionStack.push(calculate(expression[i]) + '0');
+        else if (isDigit(expression[i] == TRUE))
+            expressionStack.push(expression[i]);
     }
-    return (expressionResult);
+    return (expressionStack.top() - '0');
 }
 
 void    RPN::run( const std::string &expression ) {
-    if (expressionParsing( expression ))
-        return ;
-    std::cout << expressionProcess() << std::endl;
+    //if (expressionParsing( expression ))
+    //    return ;
+    std::cout << expressionProcess( expression ) << std::endl;
 }
 
