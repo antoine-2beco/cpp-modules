@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 11:02:14 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/07/29 17:40:18 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/07/29 17:54:14 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ int     RPN::calculate( char sign ) {
         exit(EXIT_FAILURE);
     }
 
-    b = expressionStack.top() - '0';
+    b = expressionStack.top();
     expressionStack.pop();
-    a = expressionStack.top() - '0';
+    a = expressionStack.top();
     expressionStack.pop();
 
     switch (sign) {
@@ -72,16 +72,16 @@ int     RPN::calculate( char sign ) {
     return 0;
 }
 
-int     RPN::expressionProcess( std::string &expression ) {
+void     RPN::expressionProcess( const std::string &expression ) {
     for (unsigned long i = 0; i != expression.length(); i++) {
         if (expression[i] == ' ')
             ;
         else if (isOperator(expression[i]) == TRUE || isDigit(expression[i]) == TRUE) {
             if  (isOperator(expression[i]) == TRUE)
-                expressionStack.push(calculate(expression[i]) + '0');
+                expressionStack.push(calculate(expression[i]));
             else if (isDigit(expression[i]) == TRUE)
-                expressionStack.push(expression[i]);
-            else if (expression[i + 1] != ' ' && (i - 1) != expression.length()) {
+                expressionStack.push(expression[i] - '0');
+            if (expression[i + 1] != ' ' && (i - 1) != expression.length()) {
                 std::cerr << "Error : Does not respect the reverse polish notation or a number is higher than 9" << std::endl;
                 exit (EXIT_FAILURE);
             }
@@ -95,6 +95,7 @@ int     RPN::expressionProcess( std::string &expression ) {
         std::cerr << "Error : Does not respect the reverse polish notation" << std::endl;
         exit (EXIT_FAILURE);
     }
-    return (expressionStack.top() - '0');
+    std::cout << expressionStack.top() << std::endl;
+    expressionStack.pop();
 }
 

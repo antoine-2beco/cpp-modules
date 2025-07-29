@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 11:02:37 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/07/29 17:40:06 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/07/29 17:48:22 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 class RPN {
 
-    std::stack<char>         expressionStack;
+    std::stack<int>         expressionStack;
 
     int     calculate( char sign );
     int     expressionParsing( const std::string &expression );
@@ -36,7 +36,7 @@ class RPN {
         ~RPN();
 
 
-        int     expressionProcess( std::string &expression );
+        void     expressionProcess( const std::string &expression );
 
 };
 
