@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 11:01:46 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/06/10 13:02:07 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/07/29 17:38:23 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main (int argc, char *argv[]) {
         return 1;
     }
     RPN     calculate;
-    calculate.run(argv[1]);
+    calculate.expressionProcess(argv[1]);
     return 0;
 }
 
