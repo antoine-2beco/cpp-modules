@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 14:45:02 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/07/31 17:07:14 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/13 16:57:07 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,16 @@
 # include <string.h>
 # include <vector>
 # include <deque>
+
+class   PmergeMeCore {
+
+    public :
+        PmergeMeCore();
+        PmergeMeCore( const PmergeMeCore &cpy );
+        PmergeMeCore& operator=( const PmergeMeCore &cpy);
+        ~PmergeMeCore();
+
+};
 
 class PmergeMeVector {
 
