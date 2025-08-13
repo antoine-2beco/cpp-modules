@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:29:10 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/13 17:32:53 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/13 17:46:02 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class PmergeMeVector {
 
     std::vector<int> dataVector;
-    std::vector<pair<<int>, <int>>  dataPairVector;
+    std::vector<std::pair <int, int> >  dataPairVector;
 
     public :
         PmergeMeVector();

@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:31:20 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/13 17:33:14 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/13 17:46:09 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class PmergeMeDeque {
 
     std::deque<int>  dataDeque;
-    std::vector<pair<int>, <int>>   dataPairDeque;
+    std::vector<std::pair <int, int> >   dataPairDeque;
 
     public :
         PmergeMeDeque();
