@@ -6,13 +6,13 @@
 #    By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/08 11:47:01 by ade-beco          #+#    #+#              #
-#    Updated: 2025/07/30 14:44:04 by ade-beco         ###   ########.fr        #
+#    Updated: 2025/08/13 17:34:29 by ade-beco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=		PmergeMe
 
-SRCS 		=		main.cpp  PmergeMe.cpp
+SRCS 		=		main.cpp  PmergeMeCore.cpp PmergeMeVector.cpp PmergeMeDeque.cpp
 
 OBJECTS		=		$(SRCS:.cpp=.o)
 
