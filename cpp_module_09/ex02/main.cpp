@@ -6,11 +6,13 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 14:45:48 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/13 16:41:59 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/13 17:48:35 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PmergeMe.hpp"
+#include "PmergeMeCore.hpp"
+#include "PmergeMeVector.hpp"
+#include "PmergeMeDeque.hpp"
 
 int main( int argc, char *argv[] ) {
     if (argc == 1) {
