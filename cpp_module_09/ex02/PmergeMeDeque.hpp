@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:31:20 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/13 17:46:09 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/14 19:48:54 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@
 # include <vector>
 # include <deque>
 
-class PmergeMeDeque {
+# include "PmergeMeCore.hpp"
 
-    std::deque<int>  dataDeque;
-    std::vector<std::pair <int, int> >   dataPairDeque;
+class PmergeMeDeque : public PmergeMeCore < std::deque<int>, std::vector<std::pair <int, int> > > {
 
     public :
         PmergeMeDeque();
