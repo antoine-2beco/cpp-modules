@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 19:37:00 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/15 17:12:39 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/23 18:04:36 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "PmergeMeCore.hpp"
 
 template <typename T, typename U>
-PmergeMeCore<T, U>::PmergeMeCore() {
+PmergeMeCore<T, U>::PmergeMeCore( const std::string classType ) : _classType(classType) {
     data = new T;
     dataPair = new U;
 }
@@ -28,7 +28,7 @@ PmergeMeCore<T, U>::PmergeMeCore( const PmergeMeCore<T, U> &cpy ) {
 
 template <typename T, typename U>
 PmergeMeCore<T, U>& PmergeMeCore<T, U>::operator=( const PmergeMeCore<T, U> &cpy ) {
-    (void) cpy;
+    _classType = cpy._classType;
     return *this;
 }
 
@@ -37,7 +37,7 @@ PmergeMeCore<T, U>::~PmergeMeCore() {}
 
 template <typename T, typename U>
 void    PmergeMeCore<T, U>::run( char *argv[] ) {
-    std::cout << "Algo runned for : " << argv[1] << " and this type : " << std::endl;
+    std::cout << "Algo runned for : " << argv[1] << " and this type : " << _classType << std::endl;
 }
 
 #endif

@@ -6,15 +6,15 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:29:32 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/15 17:11:46 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/23 18:03:00 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMeVector.hpp"
 
-PmergeMeVector::PmergeMeVector() {}
+PmergeMeVector::PmergeMeVector() : PmergeMeCore("std::vector") {}
 
-PmergeMeVector::PmergeMeVector( const PmergeMeVector &cpy ) {
+PmergeMeVector::PmergeMeVector( const PmergeMeVector &cpy ) : PmergeMeCore("std::vector"){
     *this = cpy;
 }
 

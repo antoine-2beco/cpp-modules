@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:27:27 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/15 17:12:11 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/23 17:57:45 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ class   PmergeMeCore {
     protected :
         T   *data;
         U   *dataPair;
+        std::string _classType;
 
     public :
-        PmergeMeCore();
+        PmergeMeCore( const std::string classType );
         PmergeMeCore( const PmergeMeCore &cpy );
         PmergeMeCore& operator=( const PmergeMeCore &cpy);
         ~PmergeMeCore();
