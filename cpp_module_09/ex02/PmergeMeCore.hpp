@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:27:27 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/23 17:57:45 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/25 12:46:44 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PMERGEMECORE_HPP
 
 # include <iostream>
+# include <ctime>
 
 template <typename T, typename U>
 class   PmergeMeCore {
@@ -29,7 +30,7 @@ class   PmergeMeCore {
         PmergeMeCore& operator=( const PmergeMeCore &cpy);
         ~PmergeMeCore();
 
-        void    run( char *argv[] );
+        void    run( int nArgs, char *args[] );
 
 };
 
