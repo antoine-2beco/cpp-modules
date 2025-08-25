@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:31:20 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/23 17:48:43 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/25 18:17:29 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 # include "PmergeMeCore.hpp"
 
-class PmergeMeDeque : public PmergeMeCore < std::deque<int>, std::vector<std::pair <int, int> > > {
+class PmergeMeDeque : public PmergeMeCore < std::deque<int>, std::deque<std::pair <int, int> > > {
 
     public :
         PmergeMeDeque();
