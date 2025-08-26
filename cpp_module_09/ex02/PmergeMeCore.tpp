@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 19:37:00 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/25 18:40:38 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/26 12:57:18 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ PmergeMeCore<T, U>& PmergeMeCore<T, U>::operator=( const PmergeMeCore<T, U> &cpy
 template <typename T, typename U>
 PmergeMeCore<T, U>::~PmergeMeCore() {}
 
-template <typename T, typename U>
+/* template <typename T, typename U>
 void    PmergeMeCore<T, U>::makePair() {
     int higherArg;
     int lowerArg;
@@ -48,11 +48,38 @@ void    PmergeMeCore<T, U>::makePair() {
     if (_nArgs % 2 == 1)
         unpairedArg = data->back();
     printPair();
-}
+} */
 
 template <typename T, typename U>
-void    PmergeMeCore<T, U>::runAlgo() {
-    makePair();
+void    PmergeMeCore<T, U>::mergeInsertionSort( T &input ) {
+    T   bigs;
+    T   smalls;
+
+    if (input.size() <= 1)
+        return ;
+
+    for ( typename T::iterator  it = input.begin(); (it + (input.size() % 2)) != input.end(); it++) {
+        if (*it > (*it + 1)) {
+            bigs.push_back(*it);
+            smalls.push_back(*(++it));
+        }
+        else {
+            smalls.push_back(*it);
+            bigs.push_back(*(++it));
+        }
+    }
+
+    int leftover = (input.size() % 2 == 1 ? -1 : input.back());
+
+    mergeInsertionSort(bigs);
+
+    std::cout << "bigs : ";
+    for ( typename T::iterator  it = bigs.begin(); it != bigs.end(); it++)
+        std::cout << *it << " ";
+
+
+    std::cout << std::endl;
+    (void)leftover;
 }
 
 template <typename T, typename U>
@@ -70,7 +97,7 @@ void    PmergeMeCore<T, U>::run( int nArgs, char *args[] ) {
     std::cout << std::endl;
 
     std::time_t start = std::time(nullPtr);
-    runAlgo();
+    mergeInsertionSort( *data );
     std::time_t end = std::time(nullPtr);
 
     std::cout << "After :";
