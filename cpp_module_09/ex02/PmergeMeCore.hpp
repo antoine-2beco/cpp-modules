@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:27:27 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/27 15:43:35 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/27 16:53:38 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PMERGEMECORE_HPP
 
 # include <iostream>
-# include <ctime>
+# include <sys/time.h>
 
 template <typename T, typename U>
 class   PmergeMeCore {
@@ -25,6 +25,7 @@ class   PmergeMeCore {
         T   _main;
         T   _pend;
         std::string _containerType;
+        long long int _chrono;
 
         PmergeMeCore( const PmergeMeCore &cpy );
         PmergeMeCore& operator=( const PmergeMeCore &cpy);
@@ -40,6 +41,9 @@ class   PmergeMeCore {
         U   &getPairs();
         T   &getMain();
         T   &getPend();
+        std::string getContainerType();
+        long long int   getChrono();
+        long long int   getTime();
 
     public :
         PmergeMeCore();
@@ -47,6 +51,10 @@ class   PmergeMeCore {
         virtual ~PmergeMeCore();
 
         void    run( int nArgs, char *args[] );
+
+        void    printBefore();
+        void    printAfter();
+        void    printTime();
 
         void    printPair() {
             for ( typename U::iterator  itPair = getPairs().begin(); itPair != getPairs().end(); itPair++)
@@ -64,6 +72,7 @@ class   PmergeMeCore {
 
 # include "PmergeMeCore.tpp"
 # include "PmergeMeCore.Getters.tpp"
+# include "PmergeMeCore.Prints.tpp"
 
 #endif
 
