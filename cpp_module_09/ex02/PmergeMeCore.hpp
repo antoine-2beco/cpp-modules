@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:27:27 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/26 12:41:45 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/27 12:39:50 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,33 +19,40 @@
 template <typename T, typename U>
 class   PmergeMeCore {
 
-    protected :
-        T   *data;
-        U   *dataPair;
-        int   unpairedArg;
-        unsigned int  _nArgs;
-        std::string _classType;
+    private :
+        T   _sequence;
+        U   _pairs;
+        T   _main;
+        std::string _containerType;
 
-    public :
-        PmergeMeCore( const std::string classType );
         PmergeMeCore( const PmergeMeCore &cpy );
         PmergeMeCore& operator=( const PmergeMeCore &cpy);
-        ~PmergeMeCore();
+
+        void    _makePairs();
+        void    _mergeInsertionSort();
+
+    protected :
+        T   &getSequence();
+        U   &getPairs();
+        T   &getMain();
+
+    public :
+        PmergeMeCore();
+        PmergeMeCore( const std::string classType );
+        virtual ~PmergeMeCore();
 
         void    run( int nArgs, char *args[] );
-        void    mergeInsertionSort( T &input );
-        void    makePair();
-
 
         void    printPair() {
-            for ( typename U::iterator  itPair = dataPair->begin(); itPair != dataPair->end(); itPair++)
+            for ( typename U::iterator  itPair = getPairs().begin(); itPair != getPairs().end(); itPair++)
                 std::cout << itPair->first << "-" << itPair->second << " | ";
-            std::cout << unpairedArg << std::endl;
+            std::cout << std::endl;
         };
 
 };
 
 # include "PmergeMeCore.tpp"
+# include "PmergeMeCore.Getters.tpp"
 
 #endif
 
