@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 19:37:00 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/27 12:37:24 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/27 13:07:47 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,17 @@ PmergeMeCore<T, U>::PmergeMeCore( const std::string containerType ) : _container
 
 template <typename T, typename U>
 PmergeMeCore<T, U>::~PmergeMeCore() {}
+
+template <typename T, typename U>
+void    PmergeMeCore<T, U>::_mergeSort( typename U::iterator begin, typename U::iterator end ) {
+    if (std::distance(begin, end) < 1) {
+        typename U::iterator    mid = begin;
+        std::advance(mid, (std::distance(begin, end) / 2));
+        _mergeSort(begin, mid);
+        _mergeSort(mid, end);
+        //_merge(begin, mid, end);
+    }
+}
 
 template <typename T, typename U>
 void    PmergeMeCore<T, U>::_makePairs() {

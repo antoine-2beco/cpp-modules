@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:27:27 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/27 12:39:50 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/27 13:08:51 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class   PmergeMeCore {
         PmergeMeCore( const PmergeMeCore &cpy );
         PmergeMeCore& operator=( const PmergeMeCore &cpy);
 
+        void    _mergeSort( typename U::iterator begin, typename U::iterator end );
         void    _makePairs();
         void    _mergeInsertionSort();
 
