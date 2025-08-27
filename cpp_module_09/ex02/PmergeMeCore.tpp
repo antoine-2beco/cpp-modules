@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 19:37:00 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/27 13:07:47 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/27 13:39:18 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,35 @@ template <typename T, typename U>
 PmergeMeCore<T, U>::~PmergeMeCore() {}
 
 template <typename T, typename U>
+void    PmergeMeCore<T, U>::_merge( typename U::iterator begin, typename U::iterator mid, typename U::iterator end ) {
+    U   firstHalf(begin, mid);
+    U   secondHalf(mid, end);
+
+    typename U::iterator    itFirstHalf = firstHalf.begin();
+    typename U::iterator    itSecondHalf = secondHalf.begin();
+    typename U::iterator    it = begin;
+
+    while ( itFirstHalf != firstHalf.end() && itSecondHalf != secondHalf.end() ) {
+        if (itFirstHalf->first <= itSecondHalf->first )
+            *it = *itFirstHalf++;
+        else
+            *it = *itSecondHalf++;
+        it++;
+    }
+    while ( itFirstHalf != firstHalf.end() )
+        *it++ = *itFirstHalf++;
+    while ( itSecondHalf != secondHalf.end() )
+        *it++ = *itSecondHalf++;
+}
+
+template <typename T, typename U>
 void    PmergeMeCore<T, U>::_mergeSort( typename U::iterator begin, typename U::iterator end ) {
-    if (std::distance(begin, end) < 1) {
+    if (std::distance(begin, end) > 1) {
         typename U::iterator    mid = begin;
         std::advance(mid, (std::distance(begin, end) / 2));
         _mergeSort(begin, mid);
         _mergeSort(mid, end);
-        //_merge(begin, mid, end);
+        _merge(begin, mid, end);
     }
 }
 
@@ -52,7 +74,6 @@ void    PmergeMeCore<T, U>::_makePairs() {
         }
         getPairs().insert(getPairs().end(), std::make_pair(first, second));
     }
-    printPair();
 }
 
 template <typename T, typename U>
@@ -61,6 +82,8 @@ void    PmergeMeCore<T, U>::_mergeInsertionSort() {
         getMain() = getSequence();
     else {
         _makePairs();
+        _mergeSort(getPairs().begin(), getPairs().end());
+        printPair();
     }
 }
 
