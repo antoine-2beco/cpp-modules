@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 12:11:19 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/27 13:09:19 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/27 15:31:06 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ U &PmergeMeCore<T, U>::getPairs() {
 template <typename T, typename U>
 T &PmergeMeCore<T, U>::getMain() {
     return _main;
+}
+
+template <typename T, typename U>
+T &PmergeMeCore<T, U>::getPend() {
+    return _pend;
 }
 
 #endif

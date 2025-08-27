@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:27:27 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/27 13:25:28 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/27 15:43:35 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ class   PmergeMeCore {
         T   _sequence;
         U   _pairs;
         T   _main;
+        T   _pend;
         std::string _containerType;
 
         PmergeMeCore( const PmergeMeCore &cpy );
         PmergeMeCore& operator=( const PmergeMeCore &cpy);
 
+        void    _divideSortedPairs();
         void    _merge( typename U::iterator begin, typename U::iterator mid, typename U::iterator end );
         void    _mergeSort( typename U::iterator begin, typename U::iterator end );
         void    _makePairs();
@@ -37,6 +39,7 @@ class   PmergeMeCore {
         T   &getSequence();
         U   &getPairs();
         T   &getMain();
+        T   &getPend();
 
     public :
         PmergeMeCore();
@@ -50,6 +53,12 @@ class   PmergeMeCore {
                 std::cout << itPair->first << "-" << itPair->second << " | ";
             std::cout << std::endl;
         };
+
+        void    printContainer( T &cont ) {
+            for ( typename T::iterator it = cont.begin(); it != cont.end(); it++ )
+                std::cout << *it << " - ";
+            std::cout << std::endl;
+        }
 
 };
 

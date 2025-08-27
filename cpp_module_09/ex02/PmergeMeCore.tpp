@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 19:37:00 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/27 13:39:18 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/27 16:02:37 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,20 @@ PmergeMeCore<T, U>::PmergeMeCore( const std::string containerType ) : _container
 
 template <typename T, typename U>
 PmergeMeCore<T, U>::~PmergeMeCore() {}
+
+template <typename T, typename U>
+void    PmergeMeCore<T, U>::_divideSortedPairs() {
+    // const_iterator for deferencing the value of pairs
+    typename U::const_iterator it = getPairs().begin();
+
+    getMain().push_back(it->second);
+
+    while ( it != getPairs().end() ) {
+        getMain().push_back(it->first);
+        getPend().push_back(it->second);
+        it++;
+    }
+}
 
 template <typename T, typename U>
 void    PmergeMeCore<T, U>::_merge( typename U::iterator begin, typename U::iterator mid, typename U::iterator end ) {
@@ -71,8 +85,8 @@ void    PmergeMeCore<T, U>::_makePairs() {
             second = *it++;
             if (first < second)
                 std::swap(first, second);
+            getPairs().insert(getPairs().end(), std::make_pair(first, second));
         }
-        getPairs().insert(getPairs().end(), std::make_pair(first, second));
     }
 }
 
@@ -83,7 +97,12 @@ void    PmergeMeCore<T, U>::_mergeInsertionSort() {
     else {
         _makePairs();
         _mergeSort(getPairs().begin(), getPairs().end());
+        _divideSortedPairs();
         printPair();
+        std::cout << "Main : ";
+        printContainer(getMain());
+        std::cout << "Pend : ";
+        printContainer(getPend());
     }
 }
 
