@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 19:37:00 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/27 16:02:37 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/27 16:05:37 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void    PmergeMeCore<T, U>::_divideSortedPairs() {
     typename U::const_iterator it = getPairs().begin();
 
     getMain().push_back(it->second);
+    getMain().push_back(it->first);
+    it++;
 
     while ( it != getPairs().end() ) {
         getMain().push_back(it->first);
