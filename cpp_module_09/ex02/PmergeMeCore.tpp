@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 19:37:00 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/27 16:54:48 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/27 16:59:52 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void    PmergeMeCore<T, U>::_divideSortedPairs() {
         getPend().push_back(it->second);
         it++;
     }
+    if (std::distance(getSequence().begin(), getSequence().end()) % 2 == 1)
+        getPend().push_back(getSequence().back());
 }
 
 template <typename T, typename U>
@@ -100,11 +102,12 @@ void    PmergeMeCore<T, U>::_mergeInsertionSort() {
         _makePairs();
         _mergeSort(getPairs().begin(), getPairs().end());
         _divideSortedPairs();
-        /*printPair();
+        printPair();
         std::cout << "Main : ";
         printContainer(getMain());
         std::cout << "Pend : ";
-        printContainer(getPend());*/
+        printContainer(getPend());
+        std::cout << std::endl;
     }
 }
 
