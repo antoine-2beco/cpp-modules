@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 19:37:00 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/27 16:59:52 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/28 15:41:59 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,82 @@ template <typename T, typename U>
 PmergeMeCore<T, U>::~PmergeMeCore() {}
 
 template <typename T, typename U>
+typename T::iterator PmergeMeCore<T, U>::_binarySearch( int value, typename T::iterator left, typename T::iterator right ) {
+    typename T::iterator mid;
+
+    while ( std::distance(left, right) > 1 ) {
+        mid = left;
+        std::advance(mid, std::distance(left, right) / 2);
+        if (value > *mid)
+            left = mid;
+        else
+            right = mid;
+    }
+    if (value > *left)
+        return std::next(left);
+    return left;
+}
+
+template <typename T, typename U>
+void    PmergeMeCore<T, U>::_insertionSort() {
+    typename T::iterator    toInsert;
+    typename T::iterator    insertionIndex;
+    typename T::iterator    lastIndex;
+    size_t                  insertCount = 0;
+
+    for ( typename T::iterator it = getInsertIndexes().begin(); it != getInsertIndexes().end(); it++ ) {
+        toInsert = getPend().begin();
+        std::advance(toInsert, *it - 1);
+        lastIndex = getMain().begin();
+        std::advance(lastIndex, *it + insertCount);
+        insertCount++;
+        insertionIndex = _binarySearch(*toInsert, getMain().begin(), lastIndex);
+        getMain().insert(insertionIndex, *toInsert);
+    }
+}
+
+template <typename T, typename U>
+size_t  PmergeMeCore<T, U>::_jacobsthalAlgo( size_t index ) {
+    if (index == 0)
+        return 0;
+    else if (index == 1)
+        return 1;
+    else
+        return _jacobsthalAlgo(index - 1) + 2 * _jacobsthalAlgo(index - 2);
+}
+
+template <typename T, typename U>
+T       PmergeMeCore<T, U>::_insertSequence( size_t n ) {
+    int index = 3;
+    T   insertSeq;
+    size_t  jacobsthalVal;
+    size_t  prevJacobsthalVal;
+    T   jacobsthalSeq;
+
+    if (n == 0)
+        return insertSeq;
+
+    jacobsthalVal = _jacobsthalAlgo(index);
+    while ( jacobsthalVal < n - 1 ) {
+        jacobsthalSeq.push_back(jacobsthalVal);
+        jacobsthalVal = _jacobsthalAlgo(++index);
+    }
+
+    prevJacobsthalVal = 1;
+    for ( typename T::const_iterator itJacobsthalVal = jacobsthalSeq.begin(); itJacobsthalVal != jacobsthalSeq.end(); itJacobsthalVal++ ) {
+        prevJacobsthalVal = *itJacobsthalVal;
+        insertSeq.push_back(*itJacobsthalVal);
+        for ( size_t i = *itJacobsthalVal; i > prevJacobsthalVal + 1; i--)
+            insertSeq.push_back(i);
+    }
+
+    while ( prevJacobsthalVal++ < n )
+        insertSeq.push_back(prevJacobsthalVal);
+
+    return insertSeq;
+}
+
+template <typename T, typename U>
 void    PmergeMeCore<T, U>::_divideSortedPairs() {
     // const_iterator for deferencing the value of pairs
     typename U::const_iterator it = getPairs().begin();
@@ -39,7 +115,7 @@ void    PmergeMeCore<T, U>::_divideSortedPairs() {
         getPend().push_back(it->second);
         it++;
     }
-    if (std::distance(getSequence().begin(), getSequence().end()) % 2 == 1)
+    if (getSequence().size() % 2 == 1)
         getPend().push_back(getSequence().back());
 }
 
@@ -108,6 +184,9 @@ void    PmergeMeCore<T, U>::_mergeInsertionSort() {
         std::cout << "Pend : ";
         printContainer(getPend());
         std::cout << std::endl;
+        getInsertIndexes() = _insertSequence(getPend().size());
+        printContainer(getInsertIndexes());
+        _insertionSort();
     }
 }
 

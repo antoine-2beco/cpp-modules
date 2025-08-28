@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 12:11:19 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/27 16:53:20 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/28 14:21:12 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ T &PmergeMeCore<T, U>::getMain() {
 template <typename T, typename U>
 T &PmergeMeCore<T, U>::getPend() {
     return _pend;
+}
+
+template <typename T, typename U>
+T &PmergeMeCore<T, U>::getInsertIndexes() {
+    return _insertIndexes;
 }
 
 template <typename T, typename U>

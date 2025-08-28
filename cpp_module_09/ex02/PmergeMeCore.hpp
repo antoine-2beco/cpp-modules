@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:27:27 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/27 16:53:38 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/28 15:36:52 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class   PmergeMeCore {
         U   _pairs;
         T   _main;
         T   _pend;
+        T   _insertIndexes;
         std::string _containerType;
         long long int _chrono;
 
@@ -35,12 +36,17 @@ class   PmergeMeCore {
         void    _mergeSort( typename U::iterator begin, typename U::iterator end );
         void    _makePairs();
         void    _mergeInsertionSort();
+        T       _insertSequence( size_t n );
+        size_t  _jacobsthalAlgo( size_t index );
+        void    _insertionSort();
+        typename T::iterator _binarySearch( int value, typename T::iterator left, typename T::iterator right );
 
     protected :
         T   &getSequence();
         U   &getPairs();
         T   &getMain();
         T   &getPend();
+        T   &getInsertIndexes();
         std::string getContainerType();
         long long int   getChrono();
         long long int   getTime();

@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:27:35 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/27 16:32:58 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/28 14:48:06 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void    PmergeMeCore<T, U>::printAfter() {
 
 template <typename T, typename U>
 void    PmergeMeCore<T, U>::printTime() {
-    std::cout << "Time to process a range of " << std::distance(getSequence().begin(), getSequence().end()) << " elements with " << getContainerType() << " : " << getChrono() << " us." << std::endl;
+    std::cout << "Time to process a range of " << getSequence().size() << " elements with " << getContainerType() << " : " << getChrono() << " us." << std::endl;
 }
 
 
