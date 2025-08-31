@@ -1,0 +1,84 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PmergeMeCore.hpp                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/13 17:27:27 by ade-beco          #+#    #+#             */
+/*   Updated: 2025/08/28 15:36:52 by ade-beco         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PMERGEMECORE_HPP
+# define PMERGEMECORE_HPP
+
+# include <iostream>
+# include <sys/time.h>
+
+template <typename T, typename U>
+class   PmergeMeCore {
+
+    private :
+        T   _sequence;
+        U   _pairs;
+        T   _main;
+        T   _pend;
+        T   _insertIndexes;
+        std::string _containerType;
+        long long int _chrono;
+
+        PmergeMeCore( const PmergeMeCore &cpy );
+        PmergeMeCore& operator=( const PmergeMeCore &cpy);
+
+        void    _divideSortedPairs();
+        void    _merge( typename U::iterator begin, typename U::iterator mid, typename U::iterator end );
+        void    _mergeSort( typename U::iterator begin, typename U::iterator end );
+        void    _makePairs();
+        void    _mergeInsertionSort();
+        T       _insertSequence( size_t n );
+        size_t  _jacobsthalAlgo( size_t index );
+        void    _insertionSort();
+        typename T::iterator _binarySearch( int value, typename T::iterator left, typename T::iterator right );
+
+    protected :
+        T   &getSequence();
+        U   &getPairs();
+        T   &getMain();
+        T   &getPend();
+        T   &getInsertIndexes();
+        std::string getContainerType();
+        long long int   getChrono();
+        long long int   getTime();
+
+    public :
+        PmergeMeCore();
+        PmergeMeCore( const std::string classType );
+        virtual ~PmergeMeCore();
+
+        void    run( int nArgs, char *args[] );
+
+        void    printBefore();
+        void    printAfter();
+        void    printTime();
+
+        void    printPair() {
+            for ( typename U::iterator  itPair = getPairs().begin(); itPair != getPairs().end(); itPair++)
+                std::cout << itPair->first << "-" << itPair->second << " | ";
+            std::cout << std::endl;
+        };
+
+        void    printContainer( T &cont ) {
+            for ( typename T::iterator it = cont.begin(); it != cont.end(); it++ )
+                std::cout << *it << " - ";
+            std::cout << std::endl;
+        }
+
+};
+
+# include "PmergeMeCore.tpp"
+# include "PmergeMeCore.Getters.tpp"
+# include "PmergeMeCore.Prints.tpp"
+
+#endif
+
