@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 13:16:06 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/05/07 13:45:08 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/31 14:21:26 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main() {
     Span    a(5);
     Span    c(10000);
-    Span*    d = new Span(111);
+    Span*   d = new Span(111);
 
 
     for (int i = 0; i < 7; i++) {

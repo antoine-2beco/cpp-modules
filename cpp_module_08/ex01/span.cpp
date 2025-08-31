@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 13:21:50 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/05/07 13:45:25 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/31 14:20:35 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ Span::Span( const Span& cpy ) {
 }
 
 Span&    Span::operator=( const Span& cpy ) {
-    if (this != &cpy)
+    if (this != &cpy) {
         _storageSize = cpy._storageSize;
         list = cpy.list;
+    }
     return *this;
 }
 
@@ -44,7 +45,7 @@ void    Span::fillList() {
     std::list<int>  randomList;
     for (unsigned int i = 0; i < toFill; i++)
         randomList.push_back(std::rand()%100);
-    list.insert(list.end(), randomList.cbegin(), randomList.cend());
+    list.insert(list.end(), randomList.begin(), randomList.end());
 }
 
 int Span::shortestSpan() const {
