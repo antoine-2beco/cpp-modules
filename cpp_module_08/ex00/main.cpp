@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 11:13:50 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/05/06 12:02:24 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/08/31 14:12:20 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main() {
     std::deque<int>     deq;
     std::vector<int>    vec;
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 11; i++) {
         set.insert(i);
         list.push_back(i);
         deq.push_front(i);
@@ -59,14 +59,12 @@ int main() {
     for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); it++)
         std::cout << " " << *it;
 
-    std::vector<int>::iterator    vec_it = easyfind(vec, 9);
-    std::cout << std::endl << " Found : " << *vec_it << " followed by " << *(++vec_it) << std::endl;
-
-    std::cout << "Test with vector : ";
-    for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); it++)
-        std::cout << " " << *it;
-
-    std::vector<int>::iterator    vec_it_f = easyfind(vec, 42);
-    std::cout << std::endl << " Is 42 in the vector ? " << (vec_it_f != vec.end() ? "yes" : "no") << std::endl;
+    try {
+        std::vector<int>::iterator    vec_it = easyfind(vec, 11);
+        std::cout << std::endl << " Found : " << *vec_it << " followed by " << *(++vec_it) << std::endl;
+    }
+    catch (std::exception & e) {
+        std::cout << std::endl << " 11 is not in the vector " << std::endl;
+    }
 }
 
