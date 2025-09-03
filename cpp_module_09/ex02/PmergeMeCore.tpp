@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 19:37:00 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/09/03 13:01:16 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/09/03 13:23:05 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,6 +185,7 @@ template <typename T, typename U>
 void    PmergeMeCore<T, U>::run( int nArgs, char *args[] ) {
     char    *endPtr;
     double  start;
+    long long int     toInsert;
     nArgs--;
 
     if (nArgs == 0) {
@@ -208,8 +209,14 @@ void    PmergeMeCore<T, U>::run( int nArgs, char *args[] ) {
             }
         }
     }
-    for ( int i = 1; i <= nArgs; i++ )
-        getSequence().insert(getSequence().end(), strtoll(args[i], &endPtr, 10));
+    for ( int i = 1; i <= nArgs; i++ ) {
+        toInsert = strtoll(args[i], &endPtr, 10);
+        if ( strlen(args[i]) > 10 || toInsert > INT_MAX) {
+            std::cerr << "Error : number reached limit : " << args[i] << std::endl;
+            exit(EXIT_FAILURE);
+        }
+        getSequence().insert(getSequence().end(), static_cast<int>(toInsert));
+    }
 
     start = clock();
     _mergeInsertionSort();
