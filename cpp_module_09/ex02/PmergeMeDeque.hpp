@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:31:20 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/09/03 12:27:23 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/09/03 13:01:29 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,3 @@ class PmergeMeDeque : public PmergeMeCore < std::deque<int>, std::deque<std::pai
 };
 
 #endif
-

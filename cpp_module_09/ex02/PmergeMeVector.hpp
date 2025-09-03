@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:29:10 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/09/03 12:27:35 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/09/03 13:01:35 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,3 @@ class PmergeMeVector : public PmergeMeCore < std::vector<int>, std::vector<std::
 };
 
 #endif
-
