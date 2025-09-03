@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 12:11:19 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/28 14:21:12 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/09/03 12:58:50 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,8 @@ std::string PmergeMeCore<T, U>::getContainerType() {
 }
 
 template <typename T, typename U>
-long long int   PmergeMeCore<T, U>::getChrono() {
+double   PmergeMeCore<T, U>::getChrono() {
     return _chrono;
-}
-
-template <typename T, typename U>
-long long int PmergeMeCore<T, U>::getTime() {
-    struct timeval  tv;
-    gettimeofday(&tv, NULL);
-    return (tv.tv_sec * 1000 + tv.tv_usec / 1000);
 }
 
 #endif

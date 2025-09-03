@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 19:37:00 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/08/28 15:41:59 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/09/03 12:56:51 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PMERGEMECORE_TPP
 
 # include "PmergeMeCore.hpp"
-# include <unistd.h>
 
 template <typename T, typename U>
 PmergeMeCore<T, U>::PmergeMeCore() : _containerType("unknow container type") {}
@@ -38,7 +37,7 @@ typename T::iterator PmergeMeCore<T, U>::_binarySearch( int value, typename T::i
             right = mid;
     }
     if (value > *left)
-        return std::next(left);
+        return ++left;
     return left;
 }
 
@@ -103,7 +102,6 @@ T       PmergeMeCore<T, U>::_insertSequence( size_t n ) {
 
 template <typename T, typename U>
 void    PmergeMeCore<T, U>::_divideSortedPairs() {
-    // const_iterator for deferencing the value of pairs
     typename U::const_iterator it = getPairs().begin();
 
     getMain().push_back(it->second);
@@ -178,14 +176,7 @@ void    PmergeMeCore<T, U>::_mergeInsertionSort() {
         _makePairs();
         _mergeSort(getPairs().begin(), getPairs().end());
         _divideSortedPairs();
-        printPair();
-        std::cout << "Main : ";
-        printContainer(getMain());
-        std::cout << "Pend : ";
-        printContainer(getPend());
-        std::cout << std::endl;
         getInsertIndexes() = _insertSequence(getPend().size());
-        printContainer(getInsertIndexes());
         _insertionSort();
     }
 }
@@ -193,6 +184,7 @@ void    PmergeMeCore<T, U>::_mergeInsertionSort() {
 template <typename T, typename U>
 void    PmergeMeCore<T, U>::run( int nArgs, char *args[] ) {
     char    *endPtr;
+    double  start;
     nArgs--;
 
     if (nArgs == 0) {
@@ -219,9 +211,9 @@ void    PmergeMeCore<T, U>::run( int nArgs, char *args[] ) {
     for ( int i = 1; i <= nArgs; i++ )
         getSequence().insert(getSequence().end(), strtoll(args[i], &endPtr, 10));
 
-    long long int start = getTime();
+    start = clock();
     _mergeInsertionSort();
-    _chrono = getTime() - start;
+    _chrono = (double)(clock() - start) / CLOCKS_PER_SEC * 1000;
 }
 
 #endif
