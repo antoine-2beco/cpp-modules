@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:27:27 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/09/03 13:19:25 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/09/04 11:55:20 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,23 @@ class   PmergeMeCore {
         PmergeMeCore( const std::string classType );
         virtual ~PmergeMeCore();
 
-        void    run( int nArgs, char *args[] );
+        T   &run( int nArgs, char *args[] );
 
         void    printBefore();
         void    printAfter();
         void    printTime();
+
+        void    printPair() {
+            for ( typename U::iterator  itPair = getPairs().begin(); itPair != getPairs().end(); itPair++)
+                std::cout << itPair->first << "-" << itPair->second << " | ";
+            std::cout << std::endl;
+        };
+
+        void    printContainer( T &cont ) {
+            for ( typename T::iterator it = cont.begin(); it != cont.end(); it++ )
+                std::cout << *it << " - ";
+            std::cout << std::endl;
+        }
 };
 
 # include "PmergeMeCore.tpp"

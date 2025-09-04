@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 19:37:00 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/09/03 13:23:05 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/09/04 12:07:45 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void    PmergeMeCore<T, U>::_insertionSort() {
     typename T::iterator    toInsert;
     typename T::iterator    insertionIndex;
     typename T::iterator    lastIndex;
-    size_t                  insertCount = 0;
+    size_t                  insertCount = 1;
 
     for ( typename T::iterator it = getInsertIndexes().begin(); it != getInsertIndexes().end(); it++ ) {
         toInsert = getPend().begin();
@@ -86,17 +86,16 @@ T       PmergeMeCore<T, U>::_insertSequence( size_t n ) {
         jacobsthalVal = _jacobsthalAlgo(++index);
     }
 
-    prevJacobsthalVal = 1;
+    prevJacobsthalVal = 0;
     for ( typename T::const_iterator itJacobsthalVal = jacobsthalSeq.begin(); itJacobsthalVal != jacobsthalSeq.end(); itJacobsthalVal++ ) {
-        prevJacobsthalVal = *itJacobsthalVal;
         insertSeq.push_back(*itJacobsthalVal);
-        for ( size_t i = *itJacobsthalVal; i > prevJacobsthalVal + 1; i--)
+        for ( size_t i = *itJacobsthalVal - 1; i > prevJacobsthalVal; i-- )
             insertSeq.push_back(i);
+        prevJacobsthalVal = *itJacobsthalVal;
     }
 
     while ( prevJacobsthalVal++ < n )
         insertSeq.push_back(prevJacobsthalVal);
-
     return insertSeq;
 }
 
@@ -182,7 +181,7 @@ void    PmergeMeCore<T, U>::_mergeInsertionSort() {
 }
 
 template <typename T, typename U>
-void    PmergeMeCore<T, U>::run( int nArgs, char *args[] ) {
+T   &PmergeMeCore<T, U>::run( int nArgs, char *args[] ) {
     char    *endPtr;
     double  start;
     long long int     toInsert;
@@ -221,6 +220,8 @@ void    PmergeMeCore<T, U>::run( int nArgs, char *args[] ) {
     start = clock();
     _mergeInsertionSort();
     _chrono = (double)(clock() - start) / CLOCKS_PER_SEC * 1000;
+
+    return (getMain());
 }
 
 #endif
