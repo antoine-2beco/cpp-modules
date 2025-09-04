@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 19:37:00 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/09/04 12:07:45 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/09/04 12:28:58 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 # define PMERGEMECORE_TPP
 
 # include "PmergeMeCore.hpp"
-
-template <typename T, typename U>
-PmergeMeCore<T, U>::PmergeMeCore() : _containerType("unknow container type") {}
 
 template <typename T, typename U>
 PmergeMeCore<T, U>::PmergeMeCore( const std::string containerType ) : _containerType(containerType) {}

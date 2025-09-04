@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 17:27:27 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/09/04 12:20:30 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/09/04 12:31:05 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class   PmergeMeCore {
         std::string _containerType;
         double _chrono;
 
+        PmergeMeCore();
         PmergeMeCore( const PmergeMeCore &cpy );
         PmergeMeCore& operator=( const PmergeMeCore &cpy);
 
@@ -54,9 +55,8 @@ class   PmergeMeCore {
         double   getChrono();
 
     public :
-        PmergeMeCore();
         PmergeMeCore( const std::string classType );
-        virtual ~PmergeMeCore();
+        virtual ~PmergeMeCore() = 0;
 
         T   &run( int nArgs, char *args[] );
 
