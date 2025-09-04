@@ -6,7 +6,7 @@
 /*   By: ade-beco <ade-beco@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 14:45:48 by ade-beco          #+#    #+#             */
-/*   Updated: 2025/09/03 13:03:16 by ade-beco         ###   ########.fr       */
+/*   Updated: 2025/09/04 12:18:05 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,15 @@
 int main( int argc, char *argv[] ) {
 
     PmergeMeVector  algoVector;
-    algoVector.run(argc, argv);
+    std::vector<int>    ret = algoVector.run(argc, argv);
 
     algoVector.printBefore();
     algoVector.printAfter();
     algoVector.printTime();
+
+    for ( std::vector<int>::iterator it = ret.begin(); it + 1 != ret.end(); it++ )
+            if (*it > *(it + 1))
+                std::cout << "Not sorted : " << *it << " > " << *(it + 1) << std::endl;
 
     PmergeMeDeque  algoDeque;
     algoDeque.run(argc, argv);
